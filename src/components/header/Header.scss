@@ -1,0 +1,13 @@
+.header {
+  width: 100%;
+  background-color: peachpuff;
+
+  .title {
+    text-align: center;
+  }
+
+  .menus {
+    display: flex;
+    justify-content: space-around;
+  }
+}
