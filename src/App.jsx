@@ -7,31 +7,37 @@ import Lol from "./pages/lol/Lol";
 import LostArk from "./pages/lostark/LostArk";
 import Poe from "./pages/poe/Poe";
 import Etc from "./pages/etc/Etc";
+import Login from "./pages/login/Login";
 
-function App({ youtube }) {
+function App({ youtube, auth }) {
   return (
     <div className="app">
       <div className="appContainer">
         <Router>
-          <Header />
           <Switch>
             <Route exact path="/">
-              <Main youtube={youtube} />
+              <Login auth={auth} />
             </Route>
-            <Route exact path="/lol">
-              <Lol />
-            </Route>
-            <Route exact path="/lostark">
-              <LostArk />
-            </Route>
-            <Route exact path="/poe">
-              <Poe />
-            </Route>
-            <Route exact path="/etc">
-              <Etc />
-            </Route>
+            <>
+              <Header />
+              <Route exact path="/main">
+                <Main />
+              </Route>
+              <Route exact path="/lol">
+                <Lol youtube={youtube} />
+              </Route>
+              <Route exact path="/lostark">
+                <LostArk youtube={youtube} />
+              </Route>
+              <Route exact path="/poe">
+                <Poe youtube={youtube} />
+              </Route>
+              <Route exact path="/etc">
+                <Etc youtube={youtube} />
+              </Route>
+              <Footer />
+            </>
           </Switch>
-          <Footer />
         </Router>
       </div>
     </div>

@@ -5,7 +5,7 @@ import "./Header.scss";
 const Header = (props) => {
   return (
     <header className="header">
-      <Link to="/">
+      <Link to="/main">
         <div className="title">나만의 게임 정보</div>
       </Link>
       <ul className="menus">
