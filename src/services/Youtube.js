@@ -8,7 +8,7 @@ class Youtube {
       params: {
         part: "snippet",
         chart: "mostPopular",
-        maxResults: 10,
+        maxResults: 12,
         regionCode: "KR",
         videoCategoryId: 20,
       },
@@ -16,13 +16,15 @@ class Youtube {
     return res.data.items;
   }
 
-  async search(query) {
+  async search(query, published) {
     const res = await this.youtube.get("search", {
       params: {
         part: "snippet",
-        maxResults: 10,
+        maxResults: 12,
         q: query,
         type: "video",
+        regionCode: "KR",
+        publishedAfter: published,
       },
     });
     return res.data.items.map((item) => ({ ...item, id: item.id.videoId }));
