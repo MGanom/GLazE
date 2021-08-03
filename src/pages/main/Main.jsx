@@ -1,24 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Videolist from "../../components/youtube/VideoList";
 import "./Main.scss";
 
-const Main = ({ youtube }) => {
-  const [videos, setVideos] = useState([]);
-  const [viewVideo, setViewVideo] = useState(null);
-
-  useEffect(() => {
-    youtube.mostPopular().then((videos) => setVideos(videos));
-  }, [youtube]);
-
-  const clickVideo = (video) => {
-    setViewVideo(video);
-  };
-
+const Main = () => {
   return (
     <section className="main">
-      <article className="youtube">
-        <Videolist videos={videos} onClick={clickVideo} />
-      </article>
+      <article className="bookmark">즐겨찾기</article>
     </section>
   );
 };
