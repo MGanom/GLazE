@@ -10,4 +10,4 @@
 210803:  
 -- Authentication을 위한 Firebase 연결  
 -- LostArk, LOL, POE, ETC 페이지 추가 + 각 페이지에 관련 Youtube 목록 연결  
--- Header 업데이트
+-- Header 업데이트, 배경이미지 추가,
