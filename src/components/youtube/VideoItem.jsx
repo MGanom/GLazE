@@ -3,7 +3,7 @@ import "./styles/VideoItem.scss";
 
 const VideoItem = ({ video, video: { snippet }, onClick }) => {
   return (
-    <li className="container" onClick={() => onClick(video)}>
+    <li className="videoContainer" onClick={() => onClick(video)}>
       <img
         className="thumbnail"
         src={snippet.thumbnails.medium.url}

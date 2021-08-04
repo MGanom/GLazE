@@ -15,11 +15,11 @@ const Etc = ({ youtube }) => {
   };
 
   return (
-    <section className="etc">
-      <article className="youtube">
+    <main className="etc">
+      <section className="youtube">
         <VideoList videos={all} onClick={clickVideo} />
-      </article>
-    </section>
+      </section>
+    </main>
   );
 };
 

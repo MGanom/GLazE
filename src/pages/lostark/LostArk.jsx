@@ -24,11 +24,11 @@ const LostArk = ({ youtube }) => {
   }, [youtube]);
 
   return (
-    <section className="lostark">
-      <article className="youtube">
+    <main className="lostark">
+      <section className="youtube">
         <VideoList videos={lostArk} onClick={clickVideo} />
-      </article>
-    </section>
+      </section>
+    </main>
   );
 };
 

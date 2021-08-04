@@ -3,9 +3,9 @@ import "./Main.scss";
 
 const Main = () => {
   return (
-    <section className="main">
-      <article className="bookmark">즐겨찾기</article>
-    </section>
+    <main className="main">
+      <section className="bookmark">즐겨찾기</section>
+    </main>
   );
 };
 
