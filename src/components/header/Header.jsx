@@ -48,7 +48,7 @@ const Header = ({ auth }) => {
       </div>
 
       <ul className="menus">
-        <li>
+        <li className="lolMenu">
           <img
             src="../../images/lolLogo.png"
             alt="lol"
@@ -56,7 +56,7 @@ const Header = ({ auth }) => {
             onClick={goToPage}
           />
         </li>
-        <li>
+        <li className="lostarkMenu">
           <img
             src="../../images/lostarkLogo.png"
             alt="lostark"
@@ -64,7 +64,7 @@ const Header = ({ auth }) => {
             onClick={goToPage}
           />
         </li>
-        <li>
+        <li className="poeMenu">
           <img
             src="../../images/poeLogo.png"
             alt="poe"
@@ -72,7 +72,7 @@ const Header = ({ auth }) => {
             onClick={goToPage}
           />
         </li>
-        <li>
+        <li className="etcMenu">
           <img
             src="../../images/etcLogo.png"
             alt="etc"
