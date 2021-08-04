@@ -1,26 +1,85 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./Header.scss";
 
-const Header = (props) => {
+const Header = ({ auth }) => {
+  const history = useHistory();
+  const historyState = history?.location?.state;
+  const [userId, setUserId] = useState(historyState && historyState.id);
+
+  const onLogout = () => {
+    auth.logout();
+  };
+
+  useEffect(() => {
+    if (!userId) {
+      history.replace("/");
+    }
+  });
+
+  useEffect(() => {
+    auth.onAuthChange((user) => {
+      if (user) {
+        setUserId(user.uid);
+      } else {
+        history.push("/");
+      }
+    });
+  });
+
+  const goToPage = (e) => {
+    history.push({
+      pathname: "/" + e.target.id,
+      state: { id: historyState.id },
+    });
+  };
+
   return (
     <header className="header">
-      <Link to="/main">
-        <div className="title">나만의 게임 정보</div>
-      </Link>
+      <div id="main" className="title" onClick={goToPage}>
+        <img src="../../images/title.png" className="titleImg" alt="title" />
+      </div>
+      <div className="logout" onClick={onLogout}>
+        <img
+          src="../../images/logoutButton.png"
+          className="logoutImg"
+          alt="logout"
+        />
+      </div>
+
       <ul className="menus">
-        <Link to="/lol">
-          <li>리그오브레전드</li>
-        </Link>
-        <Link to="/lostark">
-          <li>로스트아크</li>
-        </Link>
-        <Link to="/poe">
-          <li>패스오브엑자일</li>
-        </Link>
-        <Link to="/etc">
-          <li>기타</li>
-        </Link>
+        <li className="lolMenu">
+          <img
+            src="../../images/lolLogo.png"
+            alt="lol"
+            id="lol"
+            onClick={goToPage}
+          />
+        </li>
+        <li className="lostarkMenu">
+          <img
+            src="../../images/lostarkLogo.png"
+            alt="lostark"
+            id="lostark"
+            onClick={goToPage}
+          />
+        </li>
+        <li className="poeMenu">
+          <img
+            src="../../images/poeLogo.png"
+            alt="poe"
+            id="poe"
+            onClick={goToPage}
+          />
+        </li>
+        <li className="etcMenu">
+          <img
+            src="../../images/etcLogo.png"
+            alt="etc"
+            id="etc"
+            onClick={goToPage}
+          />
+        </li>
       </ul>
     </header>
   );

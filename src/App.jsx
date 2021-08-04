@@ -19,7 +19,7 @@ function App({ youtube, auth }) {
               <Login auth={auth} />
             </Route>
             <>
-              <Header />
+              <Header auth={auth} />
               <Route exact path="/main">
                 <Main />
               </Route>

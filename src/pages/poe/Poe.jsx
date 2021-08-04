@@ -23,11 +23,11 @@ const Poe = ({ youtube }) => {
       .then((videos) => setPoe(videos));
   }, [youtube]);
   return (
-    <section className="poe">
-      <article className="youtube">
+    <main className="poe">
+      <section className="youtube">
         <VideoList videos={poe} onClick={clickVideo} />
-      </article>
-    </section>
+      </section>
+    </main>
   );
 };
 

@@ -23,11 +23,11 @@ const Lol = ({ youtube }) => {
       .then((videos) => setLol(videos));
   }, [youtube]);
   return (
-    <section className="lol">
-      <article className="youtube">
+    <main className="lol">
+      <section className="youtube">
         <VideoList videos={lol} onClick={clickVideo} />
-      </article>
-    </section>
+      </section>
+    </main>
   );
 };
 

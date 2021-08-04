@@ -5,14 +5,56 @@ a {
 
 .header {
   width: 100%;
-  background-color: peachpuff;
 
   .title {
     text-align: center;
+    padding: 15px 0px;
+    .titleImg {
+      width: 40%;
+      cursor: pointer;
+    }
+  }
+  .logout {
+    text-align: end;
+    padding-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 3px solid rgba(72, 152, 156, 1);
+    box-shadow: 0 0 10px 5px rgba(72, 152, 156, 1);
+    .logoutImg {
+      width: 9%;
+      cursor: pointer;
+    }
   }
 
   .menus {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    padding: 5px 0px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 3px solid rgba(72, 152, 156, 1);
+    box-shadow: 0 0 10px 5px rgba(72, 152, 156, 1);
+    border-top: none;
+
+    li {
+      img {
+        width: 100%;
+        cursor: pointer;
+      }
+    }
+    .lolMenu {
+      width: 9%;
+    }
+    .lostarkMenu {
+      width: 15%;
+    }
+    .poeMenu {
+      width: 5%;
+    }
+    .etcMenu {
+      width: 11%;
+    }
   }
 }

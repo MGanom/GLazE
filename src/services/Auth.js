@@ -1,9 +1,13 @@
-import { emailProvider, firebaseAuth, googleProvider } from "./Firebase";
+import { githubProvider, firebaseAuth, googleProvider } from "./Firebase";
 
 class Auth {
   login(provider) {
     const authProvider = this.getProvider(provider);
     return firebaseAuth.signInWithPopup(authProvider);
+  }
+
+  guestLogin() {
+    return firebaseAuth.signInAnonymously();
   }
 
   logout() {
@@ -18,8 +22,8 @@ class Auth {
 
   getProvider(provider) {
     switch (provider) {
-      case "Email":
-        return emailProvider;
+      case "Github":
+        return githubProvider;
       case "Google":
         return googleProvider;
       default:
@@ -29,3 +33,5 @@ class Auth {
 }
 
 export default Auth;
+
+// "HRf8SrgXkchlgzC29stuTpi99c93"
