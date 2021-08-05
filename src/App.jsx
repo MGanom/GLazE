@@ -9,7 +9,7 @@ import Poe from "./pages/poe/Poe";
 import Etc from "./pages/etc/Etc";
 import Login from "./pages/login/Login";
 
-function App({ youtube, auth }) {
+function App({ youtube, auth, database }) {
   return (
     <div className="app">
       <div className="appContainer">
@@ -21,7 +21,7 @@ function App({ youtube, auth }) {
             <>
               <Header auth={auth} />
               <Route exact path="/main">
-                <Main />
+                <Main database={database} />
               </Route>
               <Route exact path="/lol">
                 <Lol youtube={youtube} />

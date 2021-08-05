@@ -11,6 +11,13 @@ const Header = ({ auth }) => {
     auth.logout();
   };
 
+  const goToPage = (e) => {
+    history.push({
+      pathname: "/" + e.target.id,
+      state: { id: historyState.id },
+    });
+  };
+
   useEffect(() => {
     if (!userId) {
       history.replace("/");
@@ -22,17 +29,10 @@ const Header = ({ auth }) => {
       if (user) {
         setUserId(user.uid);
       } else {
-        history.push("/");
+        history.replace("/");
       }
     });
   });
-
-  const goToPage = (e) => {
-    history.push({
-      pathname: "/" + e.target.id,
-      state: { id: historyState.id },
-    });
-  };
 
   return (
     <header className="header">

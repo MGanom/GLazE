@@ -13,11 +13,15 @@ const Login = ({ auth }) => {
   };
 
   const onLogin = (e) => {
-    auth.login(e.target.alt).then((data) => goToMain(data.user.uid));
+    auth
+      .login(e.target.alt) //
+      .then((data) => goToMain(data.user.uid));
   };
 
   const onGuestLogin = (e) => {
-    auth.guestLogin().then(() => goToMain());
+    auth
+      .guestLogin() //
+      .then(() => goToMain());
   };
 
   useEffect(() => {
