@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import Profile from "../profile/Profile";
 import "./Header.scss";
 
-const Header = ({ auth }) => {
+const Header = ({ auth, database, imageUploader }) => {
   const history = useHistory();
   const historyState = history?.location?.state;
   const [userId, setUserId] = useState(historyState && historyState.id);
 
   const onLogout = () => {
     auth.logout();
+  };
+
+  const goToPage = (e) => {
+    history.push({
+      pathname: "/" + e.target.id,
+      state: historyState,
+    });
   };
 
   useEffect(() => {
@@ -22,23 +30,17 @@ const Header = ({ auth }) => {
       if (user) {
         setUserId(user.uid);
       } else {
-        history.push("/");
+        history.replace("/");
       }
     });
   });
-
-  const goToPage = (e) => {
-    history.push({
-      pathname: "/" + e.target.id,
-      state: { id: historyState.id },
-    });
-  };
 
   return (
     <header className="header">
       <div id="main" className="title" onClick={goToPage}>
         <img src="../../images/title.png" className="titleImg" alt="title" />
       </div>
+      <Profile database={database} imageUploader={imageUploader} />
       <div className="logout" onClick={onLogout}>
         <img
           src="../../images/logoutButton.png"
@@ -46,7 +48,6 @@ const Header = ({ auth }) => {
           alt="logout"
         />
       </div>
-
       <ul className="menus">
         <li className="lolMenu">
           <img

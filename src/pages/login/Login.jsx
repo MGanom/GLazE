@@ -5,24 +5,28 @@ import "./Login.scss";
 const Login = ({ auth }) => {
   const history = useHistory();
 
-  const goToMain = (userId) => {
+  const goToMain = (userId, isGuest) => {
     history.push({
       pathname: "/main",
-      state: { id: userId },
+      state: { id: userId, isGuest: isGuest },
     });
   };
 
   const onLogin = (e) => {
-    auth.login(e.target.alt).then((data) => goToMain(data.user.uid));
+    auth
+      .login(e.target.alt) //
+      .then((data) => goToMain(data.user.uid));
   };
 
-  const onGuestLogin = (e) => {
-    auth.guestLogin().then(() => goToMain());
+  const onGuestLogin = () => {
+    auth
+      .guestLogin() //
+      .then(() => goToMain());
   };
 
   useEffect(() => {
     auth.onAuthChange((user) => {
-      user && goToMain(user.uid);
+      user && goToMain(user.uid, user.isAnonymous);
     });
   });
 
