@@ -5,10 +5,10 @@ import "./Login.scss";
 const Login = ({ auth }) => {
   const history = useHistory();
 
-  const goToMain = (userId) => {
+  const goToMain = (userId, isGuest) => {
     history.push({
       pathname: "/main",
-      state: { id: userId },
+      state: { id: userId, isGuest: isGuest },
     });
   };
 
@@ -18,7 +18,7 @@ const Login = ({ auth }) => {
       .then((data) => goToMain(data.user.uid));
   };
 
-  const onGuestLogin = (e) => {
+  const onGuestLogin = () => {
     auth
       .guestLogin() //
       .then(() => goToMain());
@@ -26,7 +26,7 @@ const Login = ({ auth }) => {
 
   useEffect(() => {
     auth.onAuthChange((user) => {
-      user && goToMain(user.uid);
+      user && goToMain(user.uid, user.isAnonymous);
     });
   });
 

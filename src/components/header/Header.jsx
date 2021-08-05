@@ -14,7 +14,7 @@ const Header = ({ auth }) => {
   const goToPage = (e) => {
     history.push({
       pathname: "/" + e.target.id,
-      state: { id: historyState.id },
+      state: historyState,
     });
   };
 

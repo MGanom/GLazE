@@ -25,15 +25,24 @@ const Editor = ({ profile, updateProfile }) => {
   return (
     <section className="profileEditor">
       <form className="profileForm" ref={formRef}>
-        <input type="text" name="name" value={name} ref={nameRef} />
-        <select type="text" name="gender" value={gender} ref={genderRef}>
+        이름
+        <input type="text" name="name" ref={nameRef} placeholder={name} />
+        성별
+        <select type="text" name="gender" ref={genderRef} placeholder={gender}>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
         </select>
-        <input type="text" name="email" value={email} ref={emailRef} />
-        <input type="text" name="message" value={message} ref={messageRef} />
+        이메일
+        <input type="text" name="email" ref={emailRef} placeholder={email} />
+        자기소개
+        <input
+          type="text"
+          name="message"
+          ref={messageRef}
+          placeholder={message}
+        />
         <button className="profileUpdateBtn" onClick={onSubmit}>
-          Update
+          완료
         </button>
       </form>
     </section>
