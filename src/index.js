@@ -7,8 +7,10 @@ import axios from "axios";
 import Youtube from "./services/Youtube";
 import Auth from "./services/Auth";
 import Database from "./services/Database";
+import ImageUploader from "./services/ImageUploader";
 
 const auth = new Auth();
+
 const database = new Database();
 
 const youtubeClient = axios.create({
@@ -17,9 +19,16 @@ const youtubeClient = axios.create({
 });
 const youtube = new Youtube(youtubeClient);
 
+const imageUploader = new ImageUploader();
+
 ReactDOM.render(
   <React.StrictMode>
-    <App auth={auth} database={database} youtube={youtube} />
+    <App
+      auth={auth}
+      database={database}
+      youtube={youtube}
+      imageUploader={imageUploader}
+    />
   </React.StrictMode>,
   document.getElementById("root")
 );

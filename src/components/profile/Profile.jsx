@@ -4,7 +4,7 @@ import Card from "./Card";
 import Editor from "./Editor";
 import "./styles/Profile.scss";
 
-const Profile = ({ database }) => {
+const Profile = ({ database, imageUploader }) => {
   const history = useHistory();
   const [profile, setProfile] = useState({});
   const [isEdit, setIsEdit] = useState(false);
@@ -33,12 +33,22 @@ const Profile = ({ database }) => {
 
   return (
     <section className="profile">
-      <Card profile={profile} />
-      <button className="profileEditBtn" onClick={toggleEdit}>
-        프로필 수정
-      </button>
-      {history?.location?.state?.isGuest || !isEdit ? null : (
-        <Editor profile={profile} updateProfile={updateProfile} />
+      <div className="profileCardContainer">
+        <Card profile={profile} />
+      </div>
+      {history?.location?.state?.isGuest ? null : (
+        <button className="profileEditBtn" onClick={toggleEdit}>
+          프로필 수정
+        </button>
+      )}
+      {!isEdit ? null : (
+        <Editor
+          profile={profile}
+          updateProfile={updateProfile}
+          imageUploader={imageUploader}
+          isEdit={isEdit}
+          setIsEdit={setIsEdit}
+        />
       )}
     </section>
   );

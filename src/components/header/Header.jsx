@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import Profile from "../profile/Profile";
 import "./Header.scss";
 
-const Header = ({ auth }) => {
+const Header = ({ auth, database, imageUploader }) => {
   const history = useHistory();
   const historyState = history?.location?.state;
   const [userId, setUserId] = useState(historyState && historyState.id);
@@ -39,6 +40,7 @@ const Header = ({ auth }) => {
       <div id="main" className="title" onClick={goToPage}>
         <img src="../../images/title.png" className="titleImg" alt="title" />
       </div>
+      <Profile database={database} imageUploader={imageUploader} />
       <div className="logout" onClick={onLogout}>
         <img
           src="../../images/logoutButton.png"
@@ -46,7 +48,6 @@ const Header = ({ auth }) => {
           alt="logout"
         />
       </div>
-
       <ul className="menus">
         <li className="lolMenu">
           <img

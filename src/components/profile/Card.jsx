@@ -3,8 +3,8 @@ import "./styles/Card.scss";
 
 const DEFAULT_IMAGE = "/images/guestIcon.svg";
 const Card = ({ profile }) => {
-  const { name, gender, email, message, fileURL } = profile;
-  const url = fileURL || DEFAULT_IMAGE;
+  const { name, gender, email, message, imageURL } = profile;
+  const url = imageURL || DEFAULT_IMAGE;
 
   return (
     <div className="profileCard">

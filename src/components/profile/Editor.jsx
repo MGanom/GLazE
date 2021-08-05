@@ -1,14 +1,29 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./styles/Editor.scss";
 
-const Editor = ({ profile, updateProfile }) => {
-  const { name, gender, email, message, fileName } = profile;
+const Editor = ({
+  profile,
+  updateProfile,
+  isEdit,
+  setIsEdit,
+  imageUploader,
+}) => {
+  const { name, gender, email, message, imageURL } = profile;
 
   const formRef = useRef();
   const nameRef = useRef();
   const genderRef = useRef();
   const emailRef = useRef();
   const messageRef = useRef();
+  const [image, setImage] = useState(null);
+  const [isUploading, setIsUploading] = useState(false);
+
+  const onImageUpload = async (e) => {
+    setIsUploading(true);
+    const uploaded = await imageUploader.upload(e.target.files[0]);
+    setIsUploading(false);
+    setImage(uploaded.url);
+  };
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -17,9 +32,10 @@ const Editor = ({ profile, updateProfile }) => {
       gender: genderRef.current.value || "",
       email: emailRef.current.value || "",
       message: messageRef.current.value || "",
+      imageURL: image || imageURL,
     };
-    formRef.current.reset();
     updateProfile(info);
+    setIsEdit(!isEdit);
   };
 
   return (
@@ -29,6 +45,9 @@ const Editor = ({ profile, updateProfile }) => {
         <input type="text" name="name" ref={nameRef} placeholder={name} />
         성별
         <select type="text" name="gender" ref={genderRef} placeholder={gender}>
+          <option value="" selected disabled hidden>
+            성별
+          </option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
         </select>
@@ -41,9 +60,24 @@ const Editor = ({ profile, updateProfile }) => {
           ref={messageRef}
           placeholder={message}
         />
-        <button className="profileUpdateBtn" onClick={onSubmit}>
-          완료
-        </button>
+        <div>
+          <input
+            className="imageUploadBtn"
+            type="file"
+            accept="image/*"
+            name="file"
+            onChange={onImageUpload}
+          />
+        </div>
+        {isUploading ? (
+          <button className="profileUpdating" onClick={onSubmit} disabled>
+            완료
+          </button>
+        ) : (
+          <button className="profileUpdated" onClick={onSubmit}>
+            완료
+          </button>
+        )}
       </form>
     </section>
   );
