@@ -1,6 +1,5 @@
 .list {
-  width: 100%;
-  height: max-content;
-  overflow: hidden;
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
