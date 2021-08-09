@@ -10,10 +10,10 @@ const Card = ({ profile }) => {
     <div className="profileCard">
       <img className="profileImg" src={url} alt="profileImg" />
       <div className="profileInfo">
-        <h1>{name}</h1>
-        <p>{gender}</p>
-        <p>{email}</p>
-        <p>{message}</p>
+        <h1 className="profileName">{name}</h1>
+        <p className="profileGender">{gender}</p>
+        <p className="profileEmail">{email}</p>
+        <p className="profileMessage">{message}</p>
       </div>
     </div>
   );

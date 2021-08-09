@@ -35,21 +35,23 @@ const Profile = ({ database, imageUploader }) => {
     <section className="profile">
       <div className="profileCardContainer">
         <Card profile={profile} />
+        {history?.location?.state?.isGuest ? null : (
+          <button className="profileEditBtn" onClick={toggleEdit}>
+            {!isEdit ? "수정" : "취소"}
+          </button>
+        )}
       </div>
-      {history?.location?.state?.isGuest ? null : (
-        <button className="profileEditBtn" onClick={toggleEdit}>
-          프로필 수정
-        </button>
-      )}
-      {!isEdit ? null : (
-        <Editor
-          profile={profile}
-          updateProfile={updateProfile}
-          imageUploader={imageUploader}
-          isEdit={isEdit}
-          setIsEdit={setIsEdit}
-        />
-      )}
+      <div className="profileEditorContainer">
+        {!isEdit ? null : (
+          <Editor
+            profile={profile}
+            updateProfile={updateProfile}
+            imageUploader={imageUploader}
+            isEdit={isEdit}
+            setIsEdit={setIsEdit}
+          />
+        )}
+      </div>
     </section>
   );
 };

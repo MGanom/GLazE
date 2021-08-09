@@ -7,6 +7,7 @@ const Header = ({ auth, database, imageUploader }) => {
   const history = useHistory();
   const historyState = history?.location?.state;
   const [userId, setUserId] = useState(historyState && historyState.id);
+  const [select, setSelect] = useState("");
 
   const onLogout = () => {
     auth.logout();
@@ -17,6 +18,7 @@ const Header = ({ auth, database, imageUploader }) => {
       pathname: "/" + e.target.id,
       state: historyState,
     });
+    setSelect("/" + e.target.id);
   };
 
   useEffect(() => {
@@ -37,20 +39,33 @@ const Header = ({ auth, database, imageUploader }) => {
 
   return (
     <header className="header">
-      <div id="main" className="title" onClick={goToPage}>
-        <img src="../../images/title.png" className="titleImg" alt="title" />
+      <div id="main" className="title">
+        <img
+          src="../../images/title.png"
+          className="titleImg"
+          alt="title"
+          onClick={goToPage}
+        />
       </div>
-      <Profile database={database} imageUploader={imageUploader} />
-      <div className="logout" onClick={onLogout}>
+      <div className="logout">
         <img
           src="../../images/logoutButton.png"
           className="logoutImg"
           alt="logout"
+          onClick={onLogout}
         />
+      </div>
+      <div className="profileContainer">
+        <Profile database={database} imageUploader={imageUploader} />
       </div>
       <ul className="menus">
         <li className="lolMenu">
           <img
+            className={
+              select === "/lol" || window.location.pathname === "/lol"
+                ? "selected"
+                : null
+            }
             src="../../images/lolLogo.png"
             alt="lol"
             id="lol"
@@ -59,6 +74,11 @@ const Header = ({ auth, database, imageUploader }) => {
         </li>
         <li className="lostarkMenu">
           <img
+            className={
+              select === "/lostark" || window.location.pathname === "/lostark"
+                ? "selected"
+                : null
+            }
             src="../../images/lostarkLogo.png"
             alt="lostark"
             id="lostark"
@@ -67,6 +87,11 @@ const Header = ({ auth, database, imageUploader }) => {
         </li>
         <li className="poeMenu">
           <img
+            className={
+              select === "/poe" || window.location.pathname === "/poe"
+                ? "selected"
+                : null
+            }
             src="../../images/poeLogo.png"
             alt="poe"
             id="poe"
@@ -75,6 +100,11 @@ const Header = ({ auth, database, imageUploader }) => {
         </li>
         <li className="etcMenu">
           <img
+            className={
+              select === "/etc" || window.location.pathname === "/etc"
+                ? "selected"
+                : null
+            }
             src="../../images/etcLogo.png"
             alt="etc"
             id="etc"

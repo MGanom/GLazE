@@ -1,4 +1,17 @@
+@import "../../styles/Colors.scss";
+
 .footer {
   width: 100%;
-  background-color: aqua;
+  padding: 5px;
+  color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 3px solid rgba($main-border-color, 1);
+  box-shadow: $main-shadow;
+
+  .myGithub {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .myGithub:hover {
+    color: rgba(0, 0, 0, 1);
+  }
 }

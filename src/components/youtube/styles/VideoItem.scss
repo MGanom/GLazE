@@ -1,9 +1,12 @@
+@import "../../../styles/Colors.scss";
+
 .videoContainer {
   width: 30%;
   padding: 10px;
   margin: 10px;
   white-space: nowrap;
   border: 1px solid black;
+
   .videoWrapper {
     width: 100%;
     display: flex;
@@ -12,16 +15,26 @@
       width: 30%;
     }
     .videoInfo {
-      font-size: 15px;
       width: 70%;
       margin-left: 8px;
-      overflow: hidden;
+
+      .title {
+        font-size: 17px;
+        font-weight: bolder;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .channel {
+        margin-top: 5px;
+        font-size: 15px;
+      }
     }
   }
 }
 .videoContainer:hover {
   transform: scale(1.2);
-  background-color: rgba(222, 201, 187, 0.8);
+  transition: transform ease-in 100ms;
+  background-color: rgba($main-color, 1);
   white-space: pre-wrap;
-  box-shadow: 0 0 10px 5px rgba(72, 152, 156, 1);
+  box-shadow: $main-shadow;
 }
