@@ -16,18 +16,18 @@ const LostArk = ({ youtube, sites }) => {
     setViewVideo(null);
   };
 
-  useEffect(() => {
-    const date = new Date();
-    const published = new Date(
-      date.getFullYear(),
-      date.getMonth(),
-      date.getDay() - 13
-    );
+  // useEffect(() => {
+  //   const date = new Date();
+  //   const published = new Date(
+  //     date.getFullYear(),
+  //     date.getMonth(),
+  //     date.getDay() - 13
+  //   );
 
-    youtube
-      .search("로스트아크", published)
-      .then((videos) => setLostArk(videos));
-  }, [youtube]);
+  //   youtube
+  //     .search("로스트아크", published)
+  //     .then((videos) => setLostArk(videos));
+  // }, [youtube]);
 
   return (
     <main className="lostark">

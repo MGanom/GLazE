@@ -16,18 +16,19 @@ const Poe = ({ youtube, sites }) => {
     setViewVideo(null);
   };
 
-  useEffect(() => {
-    const date = new Date();
-    const published = new Date(
-      date.getFullYear(),
-      date.getMonth(),
-      date.getDay() - 13
-    );
+  // useEffect(() => {
+  //   const date = new Date();
+  //   const published = new Date(
+  //     date.getFullYear(),
+  //     date.getMonth(),
+  //     date.getDay() - 13
+  //   );
 
-    youtube
-      .search("패스오브엑자일", published)
-      .then((videos) => setPoe(videos));
-  }, [youtube]);
+  //   youtube
+  //     .search("패스오브엑자일", published)
+  //     .then((videos) => setPoe(videos));
+  // }, [youtube]);
+
   return (
     <main className="poe">
       <section className="youtube">

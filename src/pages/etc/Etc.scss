@@ -14,7 +14,18 @@
 
     .youtubeSection {
       font-size: 20px;
-      border-bottom: 3px solid rgba(0, 0, 0);
+      border-bottom: 3px solid black;
+    }
+  }
+
+  .infoSites {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 3px solid black;
+
+    .infoSection {
+      font-size: 20px;
+      border-bottom: 3px solid black;
     }
   }
 }
