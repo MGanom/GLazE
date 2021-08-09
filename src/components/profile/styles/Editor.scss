@@ -1,5 +1,6 @@
 .profileEditor {
   width: 100%;
+  margin-left: 8px;
 
   .profileForm {
     display: flex;
@@ -23,6 +24,15 @@
       .name {
         width: 15%;
       }
+      .gender {
+        padding: 1px 2px 1px 2px;
+        border-width: 1px;
+        margin-left: 3px;
+        margin-right: 3px;
+      }
+      .email {
+        width: 30%;
+      }
     }
     .row2 {
       height: 100%;
@@ -30,10 +40,6 @@
         width: 100%;
         height: 100%;
         resize: none;
-      }
-    }
-    .row3 {
-      .imageUploadBtn {
       }
     }
     button {

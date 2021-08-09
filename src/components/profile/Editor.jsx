@@ -59,8 +59,9 @@ const Editor = ({
             <option value="" selected disabled hidden>
               성별
             </option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
+            <option value="남자">남자</option>
+            <option value="여자">여자</option>
+            <option value="기타">기타</option>
           </select>
           <input
             className="email"

@@ -8,6 +8,12 @@ import LostArk from "./pages/lostark/LostArk";
 import Poe from "./pages/poe/Poe";
 import Etc from "./pages/etc/Etc";
 import Login from "./pages/login/Login";
+import {
+  lolsites,
+  lostarksites,
+  poesites,
+  othersites,
+} from "../src/data/Sites";
 
 function App({ youtube, auth, database, imageUploader }) {
   return (
@@ -28,16 +34,16 @@ function App({ youtube, auth, database, imageUploader }) {
                 <Main />
               </Route>
               <Route exact path="/lol">
-                <Lol youtube={youtube} />
+                <Lol youtube={youtube} sites={lolsites} />
               </Route>
               <Route exact path="/lostark">
-                <LostArk youtube={youtube} />
+                <LostArk youtube={youtube} sites={lostarksites} />
               </Route>
               <Route exact path="/poe">
-                <Poe youtube={youtube} />
+                <Poe youtube={youtube} sites={poesites} />
               </Route>
               <Route exact path="/etc">
-                <Etc youtube={youtube} />
+                <Etc youtube={youtube} sites={othersites} />
               </Route>
               <Footer />
             </>

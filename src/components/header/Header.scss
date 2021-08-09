@@ -21,6 +21,7 @@ a {
 
     .logoutImg {
       width: 9%;
+      padding: 5px;
       cursor: pointer;
       background-color: rgba(255, 255, 255, 0.6);
       border: 3px solid rgba($main-border-color, 1);
@@ -33,10 +34,7 @@ a {
   .profileContainer {
     display: flex;
     flex-direction: column;
-    padding-right: 8px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 8px;
+    padding: 5px;
     background-color: rgba(255, 255, 255, 0.6);
     border: 3px solid rgba($main-border-color, 1);
     box-shadow: $main-shadow;

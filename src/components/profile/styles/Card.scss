@@ -4,19 +4,20 @@
   width: 100%;
   border-radius: 10px;
   .profileImg {
-    width: 84px;
-    height: 84px;
+    width: 91px;
+    height: 91px;
   }
   .profileInfo {
     margin-left: 7px;
 
     .profileName {
+      font-size: 21px;
+      font-weight: bold;
     }
-    .profileGender {
-    }
-    .profileEmail {
-    }
+
     .profileMessage {
+      max-height: 42px;
+      overflow: hidden;
     }
   }
 }
