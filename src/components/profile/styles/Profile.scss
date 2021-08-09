@@ -1,3 +1,31 @@
-.profileCardContainer {
-  border: 2px solid black;
+@import "../../../styles/Colors.scss";
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+
+  .profileCardContainer {
+    position: relative;
+    display: flex;
+    width: 50%;
+    background-color: rgba($main-color, 0.8);
+    border: 3px solid rgba($main-border-color, 1);
+    border-radius: 10px;
+
+    .profileEditBtn {
+      position: absolute;
+      right: 0;
+      top: 7px;
+      margin: 0px 10px 0px 10px;
+      height: min-content;
+      width: 50px;
+    }
+  }
+
+  .profileEditorContainer {
+    display: flex;
+    width: 50%;
+  }
 }

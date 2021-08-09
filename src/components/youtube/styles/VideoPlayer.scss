@@ -20,7 +20,11 @@
   height: 12%;
   border: 3px solid rgba($main-border-color, 1);
   border-radius: 15%;
-  background-color: rgba(222, 201, 187, 1);
+  background-color: rgba($main-color, 0.9);
   box-shadow: $main-shadow;
   cursor: pointer;
+}
+.videoCloseBtn:hover {
+  background-color: rgba($main-color, 1);
+  transform: scale(1.2);
 }

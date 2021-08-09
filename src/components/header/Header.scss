@@ -1,3 +1,5 @@
+@import "../../styles/Colors.scss";
+
 a {
   text-decoration: none;
   color: black;
@@ -16,32 +18,53 @@ a {
   }
   .logout {
     text-align: end;
-    padding-right: 8px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border: 3px solid rgba(72, 152, 156, 1);
-    box-shadow: 0 0 10px 5px rgba(72, 152, 156, 1);
+
     .logoutImg {
       width: 9%;
       cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.6);
+      border: 3px solid rgba($main-border-color, 1);
+      box-shadow: $main-shadow;
     }
+    .logoutImg:hover {
+      opacity: 0.8;
+    }
+  }
+  .profileContainer {
+    display: flex;
+    flex-direction: column;
+    padding-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 3px solid rgba($main-border-color, 1);
+    box-shadow: $main-shadow;
   }
 
   .menus {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 5px 0px;
+    padding: 10px 0px;
     background-color: rgba(255, 255, 255, 0.6);
-    border: 3px solid rgba(72, 152, 156, 1);
-    box-shadow: 0 0 10px 5px rgba(72, 152, 156, 1);
+    border: 3px solid $main-border-color;
+    box-shadow: $main-shadow;
     border-top: none;
 
     li {
+      display: flex;
       img {
         width: 100%;
         cursor: pointer;
+      }
+      .selected {
+        transform: scale(1.1);
+        box-shadow: 0 10px 5px -4px $main-border-color;
+      }
+      img:hover {
+        transform: scale(1.1);
+        transition: ease-in 50ms;
       }
     }
     .lolMenu {
