@@ -1,6 +1,7 @@
 export const lolsites = [
   {
     id: 1,
+    bookmark: "opgg",
     logo: "/images/opggLogo.png",
     name: "OP.GG (오피지지)",
     description: "전적 검색, 통계, 랭킹 등을 지원하는 사이트",
@@ -8,6 +9,7 @@ export const lolsites = [
   },
   {
     id: 2,
+    bookmark: "fow",
     logo: "/images/fowLogo.png",
     name: "FOW.KR (포우)",
     description: "전적 검색, 통계, 랭킹 등을 지원하는 사이트",
@@ -15,6 +17,7 @@ export const lolsites = [
   },
   {
     id: 3,
+    bookmark: "lolinven",
     logo: "/images/invenLogo.png",
     name: "LOL 인벤",
     description:
@@ -23,6 +26,7 @@ export const lolsites = [
   },
   {
     id: 4,
+    bookmark: "naveresports",
     logo: "/images/naverLogo.png",
     name: "NAVER e스포츠",
     description:
@@ -34,14 +38,16 @@ export const lolsites = [
 export const lostarksites = [
   {
     id: 1,
+    bookmark: "loawa",
     logo: "/images/loawaLogo.png",
     name: "LOAWA (로아와)",
     description:
       "캐릭터 검색, 통계, 순위, 백과사전 등 정보를 얻을 수 있고, 디스코드와 같은 친목도 가능한 사이트",
-    url: "https://https://loawa.com/main",
+    url: "https://loawa.com/main",
   },
   {
     id: 2,
+    bookmark: "lostarkinven",
     logo: "/images/invenLogo.png",
     name: "로스트아크 인벤",
     description:
@@ -50,6 +56,7 @@ export const lostarksites = [
   },
   {
     id: 3,
+    bookmark: "dolpago",
     logo: "/images/dolpagoLogo.png",
     name: "돌파고 / 로파고",
     description: "어빌리티 스톤을 세공할 때 사용할 수 있는 시뮬레이터",
@@ -57,6 +64,7 @@ export const lostarksites = [
   },
   {
     id: 4,
+    bookmark: "loabook",
     logo: "/images/loabookLogo.png",
     name: "모험의 서 & 모코코",
     description:
@@ -68,6 +76,7 @@ export const lostarksites = [
 export const poesites = [
   {
     id: 1,
+    bookmark: "poeninja",
     logo: "/images/poeNinjaLogo.png",
     name: "poe.ninja",
     description:
@@ -76,6 +85,7 @@ export const poesites = [
   },
   {
     id: 2,
+    bookmark: "poedb",
     logo: "/images/poeDbLogo.png",
     name: "PoEDB",
     description:
@@ -84,6 +94,7 @@ export const poesites = [
   },
   {
     id: 3,
+    bookmark: "poewiki",
     logo: "/images/poeWikiLogo.png",
     name: "PoE Wiki",
     description:
@@ -92,6 +103,7 @@ export const poesites = [
   },
   {
     id: 4,
+    bookmark: "poevault",
     logo: "/images/poeVaultLogo.png",
     name: "PoE Vault (레벨링 가이드)",
     description:
@@ -103,6 +115,7 @@ export const poesites = [
 export const othersites = [
   {
     id: 1,
+    bookmark: "metarcritic",
     logo: "/images/metacriticLogo.svg",
     name: "metacritic",
     description:
@@ -111,6 +124,7 @@ export const othersites = [
   },
   {
     id: 2,
+    bookmark: "gametrics",
     logo: "/images/gametricsLogo.gif",
     name: "게임트릭스",
     description:
@@ -119,6 +133,7 @@ export const othersites = [
   },
   {
     id: 3,
+    bookmark: "quasarzone",
     logo: "/images/quasarzoneLogo.png",
     name: "QUASAR ZONE (퀘이사존)",
     description:
@@ -127,6 +142,7 @@ export const othersites = [
   },
   {
     id: 4,
+    bookmark: "itinven",
     logo: "/images/itInvenLogo.png",
     name: "IT 인벤",
     description:

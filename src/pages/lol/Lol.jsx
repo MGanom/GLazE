@@ -4,7 +4,7 @@ import VideoList from "../../components/youtube/VideoList";
 import VideoPlayer from "../../components/youtube/VideoPlayer";
 import "./Lol.scss";
 
-const Lol = ({ youtube, sites }) => {
+const Lol = ({ database, youtube, sites }) => {
   const [lol, setLol] = useState([]);
   const [viewVideo, setViewVideo] = useState(null);
 
@@ -45,7 +45,7 @@ const Lol = ({ youtube, sites }) => {
       </section>
       <section className="infoSites">
         <h1 className="infoSection">관련 정보 사이트</h1>
-        <SiteList sites={sites} />
+        <SiteList database={database} sites={sites} />
       </section>
     </main>
   );

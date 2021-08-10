@@ -4,7 +4,7 @@ import VideoList from "../../components/youtube/VideoList";
 import VideoPlayer from "../../components/youtube/VideoPlayer";
 import "./Poe.scss";
 
-const Poe = ({ youtube, sites }) => {
+const Poe = ({ database, youtube, sites }) => {
   const [poe, setPoe] = useState([]);
   const [viewVideo, setViewVideo] = useState(null);
 
@@ -46,7 +46,7 @@ const Poe = ({ youtube, sites }) => {
       </section>
       <section className="infoSites">
         <h1 className="infoSection">관련 정보 사이트</h1>
-        <SiteList sites={sites} />
+        <SiteList database={database} sites={sites} />
       </section>
     </main>
   );

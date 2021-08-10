@@ -28,11 +28,11 @@ const Editor = ({
   const onSubmit = (e) => {
     e.preventDefault();
     const info = {
-      name: nameRef.current.value || name,
-      gender: genderRef.current.value || gender,
-      email: emailRef.current.value || email,
-      message: messageRef.current.value || message,
-      imageURL: image || imageURL,
+      name: nameRef.current.value || name || "",
+      gender: genderRef.current.value || gender || "",
+      email: emailRef.current.value || email || "",
+      message: messageRef.current.value || message || "",
+      imageURL: image || imageURL || "",
     };
     updateProfile(info);
     setIsEdit(!isEdit);
@@ -49,16 +49,8 @@ const Editor = ({
             ref={nameRef}
             placeholder={name || "이름"}
           />
-          <select
-            className="gender"
-            type="text"
-            name="gender"
-            ref={genderRef}
-            placeholder={gender}
-          >
-            <option value="" selected disabled hidden>
-              성별
-            </option>
+          <select className="gender" type="text" name="gender" ref={genderRef}>
+            <option value="">성별</option>
             <option value="남자">남자</option>
             <option value="여자">여자</option>
             <option value="기타">기타</option>
