@@ -1,7 +1,8 @@
 import React from "react";
+import Bookmark from "../bookmark/Bookmark";
 import "./styles/SiteItem.scss";
 
-const SiteItem = ({ logo, name, description, url }) => {
+const SiteItem = ({ database, id, logo, name, description, url }) => {
   return (
     <section className="siteItem">
       <a
@@ -16,6 +17,7 @@ const SiteItem = ({ logo, name, description, url }) => {
         <div className="siteName">{name}</div>
         <div className="siteDescription">{description}</div>
       </div>
+      <Bookmark database={database} id={id} name={name} url={url} />
     </section>
   );
 };

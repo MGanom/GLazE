@@ -28,11 +28,11 @@ const Editor = ({
   const onSubmit = (e) => {
     e.preventDefault();
     const info = {
-      name: nameRef.current.value || name,
-      gender: genderRef.current.value || gender,
-      email: emailRef.current.value || email,
-      message: messageRef.current.value || message,
-      imageURL: image || imageURL,
+      name: nameRef.current.value || name || "",
+      gender: genderRef.current.value || gender || "",
+      email: emailRef.current.value || email || "",
+      message: messageRef.current.value || message || "",
+      imageURL: image || imageURL || "",
     };
     updateProfile(info);
     setIsEdit(!isEdit);

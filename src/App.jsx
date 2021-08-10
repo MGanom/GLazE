@@ -31,19 +31,23 @@ function App({ youtube, auth, database, imageUploader }) {
                 imageUploader={imageUploader}
               />
               <Route exact path="/main">
-                <Main />
+                <Main database={database} />
               </Route>
               <Route exact path="/lol">
-                <Lol youtube={youtube} sites={lolsites} />
+                <Lol youtube={youtube} database={database} sites={lolsites} />
               </Route>
               <Route exact path="/lostark">
-                <LostArk youtube={youtube} sites={lostarksites} />
+                <LostArk
+                  youtube={youtube}
+                  database={database}
+                  sites={lostarksites}
+                />
               </Route>
               <Route exact path="/poe">
-                <Poe youtube={youtube} sites={poesites} />
+                <Poe youtube={youtube} database={database} sites={poesites} />
               </Route>
               <Route exact path="/etc">
-                <Etc youtube={youtube} sites={othersites} />
+                <Etc youtube={youtube} database={database} sites={othersites} />
               </Route>
               <Footer />
             </>

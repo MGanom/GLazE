@@ -1,17 +1,21 @@
 .siteItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 20%;
   padding: 8px;
   margin: 8px 0px 8px 0px;
   border: 3px solid black;
-
-  .siteLogo {
-    width: 100%;
+  .siteUrl {
     height: 40%;
+    .siteLogo {
+      width: 100%;
+      height: 100%;
+    }
   }
   .siteInfo {
-    display: flex;
-    flex-direction: column;
-    height: 60%;
+    // height: 60%;
     .siteName {
       margin: 5px 0px 5px 0px;
       text-align: center;
@@ -21,5 +25,11 @@
     .siteDescription {
       font-size: 15px;
     }
+  }
+  .bookmarkBtn {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    cursor: pointer;
   }
 }

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Main.scss";
 
-const Main = () => {
+const Main = ({ database }) => {
+  const [bookmark, setBookmark] = useState({});
+
   return (
     <main className="main">
       <section className="bookmark">즐겨찾기</section>

@@ -4,7 +4,7 @@ import VideoList from "../../components/youtube/VideoList";
 import VideoPlayer from "../../components/youtube/VideoPlayer";
 import "./LostArk.scss";
 
-const LostArk = ({ youtube, sites }) => {
+const LostArk = ({ database, youtube, sites }) => {
   const [lostArk, setLostArk] = useState([]);
   const [viewVideo, setViewVideo] = useState(null);
 
@@ -46,7 +46,7 @@ const LostArk = ({ youtube, sites }) => {
       </section>
       <section className="infoSites">
         <h1 className="infoSection">관련 정보 사이트</h1>
-        <SiteList sites={sites} />
+        <SiteList database={database} sites={sites} />
       </section>
     </main>
   );
