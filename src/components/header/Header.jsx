@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Profile from "../profile/Profile";
 import "./Header.scss";
@@ -9,9 +9,9 @@ const Header = ({ auth, database, imageUploader }) => {
   const [userId, setUserId] = useState(historyState && historyState.id);
   const [select, setSelect] = useState("");
 
-  const onLogout = () => {
+  const onLogout = useCallback(() => {
     auth.logout();
-  };
+  }, [auth]);
 
   const goToPage = (e) => {
     history.push({
@@ -25,7 +25,8 @@ const Header = ({ auth, database, imageUploader }) => {
     if (!userId) {
       history.replace("/");
     }
-  });
+    return;
+  }, [history, userId]);
 
   useEffect(() => {
     auth.onAuthChange((user) => {
@@ -35,7 +36,7 @@ const Header = ({ auth, database, imageUploader }) => {
         history.replace("/");
       }
     });
-  });
+  }, [auth, history]);
 
   return (
     <header className="header">

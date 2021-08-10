@@ -43,7 +43,7 @@ export const lostarksites = [
     name: "LOAWA (로아와)",
     description:
       "캐릭터 검색, 통계, 순위, 백과사전 등 정보를 얻을 수 있고, 디스코드와 같은 친목도 가능한 사이트",
-    url: "https://https://loawa.com/main",
+    url: "https://loawa.com/main",
   },
   {
     id: 2,

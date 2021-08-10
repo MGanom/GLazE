@@ -20,7 +20,11 @@ const Profile = ({ database, imageUploader }) => {
       setProfile(info);
     });
     return () => stopSync();
-  });
+  }, [
+    database,
+    history?.location?.state?.isGuest,
+    history?.location?.state?.id,
+  ]);
 
   const updateProfile = (info) => {
     setProfile(info);
