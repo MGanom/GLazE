@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./styles/Reset.scss";
 import "./index.scss";
+import "./styles/Reset.scss";
 import App from "./App";
 import axios from "axios";
 import Youtube from "./services/Youtube";

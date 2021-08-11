@@ -1,0 +1,17 @@
+.bookmarkBtnOff {
+  font-size: 2rem;
+  color: rgb(211, 211, 211);
+}
+.bookmarkBtnOff:hover {
+  transform: scale(1.1);
+  color: rgb(255, 215, 0);
+}
+
+.bookmarkBtnOn {
+  font-size: 2rem;
+  color: rgb(255, 215, 0);
+}
+.bookmarkBtnOn:hover {
+  transform: scale(0.9);
+  color: rgb(206, 176, 9);
+}

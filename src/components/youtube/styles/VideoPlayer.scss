@@ -5,8 +5,8 @@
   width: 70%;
   height: 106%;
   left: 15.5%;
-  border: 3px solid rgba($main-border-color, 1);
-  box-shadow: 0 0 10px 3px rgba($main-border-color, 1);
+  border: 3px solid rgba($main-mint, 1);
+  box-shadow: 0 0 10px 3px rgba($main-mint, 1);
   .player {
     width: 100%;
     height: 100%;
@@ -18,13 +18,13 @@
   right: 10%;
   width: 4%;
   height: 12%;
-  border: 3px solid rgba($main-border-color, 1);
+  border: 3px solid rgba($main-mint, 1);
   border-radius: 15%;
-  background-color: rgba($main-color, 0.9);
+  background-color: rgba($main-brown, 0.9);
   box-shadow: $main-shadow;
   cursor: pointer;
 }
 .videoCloseBtn:hover {
-  background-color: rgba($main-color, 1);
+  background-color: rgba($main-brown, 1);
   transform: scale(1.2);
 }
