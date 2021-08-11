@@ -1,3 +1,10 @@
-$main-color: #dec9bb;
-$main-border-color: #48989c;
-$main-shadow: 0 0 10px 5px $main-border-color;
+$main-brown: rgb(222, 201, 187);
+$main-mint: rgb(72, 152, 156);
+$main-blue: rgb(0, 50, 97);
+$main-shadow: 0 0 10px 5px $main-mint;
+
+$sub-brown-one: rgb(204, 181, 166);
+$sub-brown-two: rgb(185, 161, 145);
+$sub-mint-one: rgb(50, 132, 136);
+$sub-mint-two: rgb(30, 123, 128);
+$sub-shadow: 0 0 10px 5px $main-brown;

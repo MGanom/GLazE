@@ -4,7 +4,7 @@
   width: 100%;
   height: 100%;
   flex: 1 1;
-  background-color: rgba($main-color, 0.8);
+  background-color: rgba($main-brown, 0.8);
 
   .youtube {
     display: flex;
@@ -13,7 +13,7 @@
     position: relative;
 
     .youtubeSection {
-      font-size: 20px;
+      font-size: 1.25rem;
       border-bottom: 3px solid black;
     }
   }
@@ -25,7 +25,7 @@
     border-bottom: 3px solid black;
 
     .infoSection {
-      font-size: 20px;
+      font-size: 1.25rem;
       border-bottom: 3px solid black;
     }
   }

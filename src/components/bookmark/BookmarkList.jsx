@@ -1,5 +1,8 @@
 import React from "react";
+import "./styles/BookmarkList.scss";
 import { useHistory } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const BookmarkList = ({ database, id, name, url }) => {
   const history = useHistory();
@@ -20,9 +23,11 @@ const BookmarkList = ({ database, id, name, url }) => {
         {name}
       </a>
       {!id ? null : (
-        <button className="bookmarkDeleteBtn" onClick={deleteBookmark}>
-          bye
-        </button>
+        <FontAwesomeIcon
+          className="bookmarkDeleteBtn"
+          icon={faStar}
+          onClick={deleteBookmark}
+        />
       )}
     </section>
   );

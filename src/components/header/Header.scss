@@ -23,8 +23,8 @@ a {
       width: 9%;
       padding: 5px;
       cursor: pointer;
-      background-color: rgba(255, 255, 255, 0.6);
-      border: 3px solid rgba($main-border-color, 1);
+      background-color: rgba($main-brown, 0.95);
+      border: 3px solid rgba($main-mint, 1);
       box-shadow: $main-shadow;
     }
     .logoutImg:hover {
@@ -35,8 +35,8 @@ a {
     display: flex;
     flex-direction: column;
     padding: 5px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border: 3px solid rgba($main-border-color, 1);
+    background-color: rgba($main-brown, 0.95);
+    border: 3px solid rgba($main-mint, 1);
     box-shadow: $main-shadow;
   }
 
@@ -45,8 +45,8 @@ a {
     justify-content: space-around;
     align-items: center;
     padding: 10px 0px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border: 3px solid $main-border-color;
+    background-color: rgba($main-brown, 0.95);
+    border: 3px solid $main-mint;
     box-shadow: $main-shadow;
     border-top: none;
 
@@ -58,7 +58,7 @@ a {
       }
       .selected {
         transform: scale(1.1);
-        box-shadow: 0 10px 5px -4px $main-border-color;
+        box-shadow: 0 10px 5px -4px $main-mint;
       }
       img:hover {
         transform: scale(1.1);

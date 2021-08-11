@@ -1,12 +1,56 @@
+@import "../../styles/Colors.scss";
+
 .main {
   width: 100%;
   display: flex;
   flex-direction: column;
   flex: 1 1;
-  background-color: rgba(222, 201, 187, 0.8);
+  padding: 8px;
+  background-color: rgba($sub-brown-one, 0.7);
+  // background-color: rgba(white, 0.7);
 
-  .youtube {
-    width: 40%;
-    height: fit-content;
+  .bookmark {
+    display: flex;
+    width: 60%;
+    height: max-content;
+    place-self: center;
+    box-shadow: $sub-shadow;
+
+    .bookmarkList {
+      width: 50%;
+      background-color: rgba($sub-brown-two, 0.9);
+      border: 3px solid $sub-mint-one;
+
+      .bookmarkTitle {
+        padding: 2px;
+        border-bottom: 3px solid $sub-mint-one;
+      }
+      .bookmarkItems {
+        padding: 2px;
+      }
+    }
+    .bookmarkHowto {
+      width: 50%;
+      background-color: rgba($sub-brown-two, 0.9);
+      border: 3px solid $sub-mint-one;
+
+      .bookmarkHowtoTitle {
+        padding: 2px;
+        border-bottom: 3px solid $sub-mint-one;
+      }
+      .bookmarkHowtoContent {
+        padding: 2px;
+      }
+    }
+  }
+
+  .mainAbout {
+    .mainAboutTitle {
+      background-color: rgba($sub-brown-two, 0.9);
+    }
+
+    .mainAboutContent {
+      background-color: rgba($sub-brown-two, 0.9);
+    }
   }
 }

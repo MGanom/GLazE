@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./styles/Bookmark.scss";
 import { useHistory } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const Bookmark = ({ database, id, name, url }) => {
   const history = useHistory();
@@ -28,17 +30,21 @@ const Bookmark = ({ database, id, name, url }) => {
   };
 
   return (
-    <>
+    <div className="bookmarkToggleBtn">
       {!isMarked ? (
-        <div className="bookmarkBtn" onClick={updateBookmark}>
-          ADD
-        </div>
+        <FontAwesomeIcon
+          className="bookmarkBtnOff"
+          icon={faStar}
+          onClick={updateBookmark}
+        />
       ) : (
-        <div className="bookmarkBtn" onClick={deleteBookmark}>
-          DELETE
-        </div>
+        <FontAwesomeIcon
+          className="bookmarkBtnOn"
+          icon={faStar}
+          onClick={deleteBookmark}
+        />
       )}
-    </>
+    </div>
   );
 };
 

@@ -42,7 +42,7 @@ const Header = ({ auth, database, imageUploader }) => {
     <header className="header">
       <div id="main" className="title">
         <img
-          src="../../images/title.png"
+          src="/images/title.png"
           className="titleImg"
           alt="title"
           onClick={goToPage}
@@ -50,7 +50,7 @@ const Header = ({ auth, database, imageUploader }) => {
       </div>
       <div className="logout">
         <img
-          src="../../images/logoutButton.png"
+          src="images/logoutButton.png"
           className="logoutImg"
           alt="logout"
           onClick={onLogout}
@@ -67,7 +67,7 @@ const Header = ({ auth, database, imageUploader }) => {
                 ? "selected"
                 : null
             }
-            src="../../images/lolLogo.png"
+            src="/images/lolLogo.png"
             alt="lol"
             id="lol"
             onClick={goToPage}
@@ -80,7 +80,7 @@ const Header = ({ auth, database, imageUploader }) => {
                 ? "selected"
                 : null
             }
-            src="../../images/lostarkLogo.png"
+            src="/images/lostarkLogo.png"
             alt="lostark"
             id="lostark"
             onClick={goToPage}
@@ -93,7 +93,7 @@ const Header = ({ auth, database, imageUploader }) => {
                 ? "selected"
                 : null
             }
-            src="../../images/poeLogo.png"
+            src="/images/poeLogo.png"
             alt="poe"
             id="poe"
             onClick={goToPage}
@@ -106,7 +106,7 @@ const Header = ({ auth, database, imageUploader }) => {
                 ? "selected"
                 : null
             }
-            src="../../images/etcLogo.png"
+            src="/images/etcLogo.png"
             alt="etc"
             id="etc"
             onClick={goToPage}

@@ -45,21 +45,21 @@ const Login = ({ auth }) => {
           <ul className="authList">
             <li className="googleLogin">
               <img
-                src="../../images/googleIcon.png"
+                src="/images/googleIcon.png"
                 alt="Google"
                 onClick={onLogin}
               />
             </li>
             <li className="githubLogin">
               <img
-                src="../../images/githubIcon.svg"
+                src="/images/githubIcon.svg"
                 alt="Github"
                 onClick={onLogin}
               />
             </li>
             <li className="guestLogin">
               <img
-                src="../../images/guestIcon.svg"
+                src="/images/guestIcon.svg"
                 alt="Guest"
                 onClick={onGuestLogin}
               />
