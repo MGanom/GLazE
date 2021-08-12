@@ -1,31 +1,46 @@
 @import "../../styles/Colors.scss";
 
 .poe {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 100%;
   flex: 1 1;
-  background-color: rgba($main-brown, 0.8);
+  padding: 1em;
+  background-color: rgba(white, 0.7);
 
   .youtube {
     display: flex;
     flex-direction: column;
-    border-bottom: 3px solid black;
+    place-self: center;
     position: relative;
+    width: 95%;
+    margin-bottom: 1em;
+    border: 3px solid $sub-mint-one;
+    background-color: rgba(white, 0.5);
+    box-shadow: $sub-shadow;
 
     .youtubeSection {
-      font-size: 1.25rem;
-      border-bottom: 3px solid black;
+      font-size: 1.5rem;
+      border-bottom: 3px solid $sub-mint-one;
+      background-color: rgba($sub-brown-two, 0.9);
+      padding: 0.5rem;
     }
   }
 
   .infoSites {
     display: flex;
     flex-direction: column;
-    border-bottom: 3px solid black;
+    place-self: center;
+    width: 95%;
+    border: 3px solid $sub-mint-one;
+    background-color: rgba(white, 0.5);
+    box-shadow: $sub-shadow;
 
     .infoSection {
-      font-size: 1.25rem;
-      border-bottom: 3px solid black;
+      font-size: 1.5rem;
+      border-bottom: 3px solid $sub-mint-one;
+      background-color: rgba($sub-brown-two, 0.9);
+      padding: 0.5rem;
     }
   }
 }

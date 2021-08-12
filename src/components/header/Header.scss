@@ -14,6 +14,7 @@ a {
     .titleImg {
       width: 40%;
       cursor: pointer;
+      filter: drop-shadow(0 0 5px $main-mint);
     }
   }
   .logout {
@@ -55,6 +56,7 @@ a {
       img {
         width: 100%;
         cursor: pointer;
+        filter: drop-shadow(0 0 1px black);
       }
       .selected {
         transform: scale(1.1);

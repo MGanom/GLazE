@@ -8,9 +8,9 @@ const Etc = ({ database, youtube, sites }) => {
   const [all, setAll] = useState([]);
   const [viewVideo, setViewVideo] = useState(null);
 
-  // useEffect(() => {
-  //   youtube.mostPopular().then((videos) => setAll(videos));
-  // }, [youtube]);
+  useEffect(() => {
+    youtube.mostPopular().then((videos) => setAll(videos));
+  }, [youtube]);
 
   const clickVideo = (video) => {
     setViewVideo(video);
@@ -26,8 +26,7 @@ const Etc = ({ database, youtube, sites }) => {
         <VideoList videos={all} onClick={clickVideo} />
         {viewVideo ? (
           <>
-            {" "}
-            <VideoPlayer video={viewVideo} />{" "}
+            <VideoPlayer video={viewVideo} />
             <button className="videoCloseBtn" onClick={closeVideo}>
               X
             </button>

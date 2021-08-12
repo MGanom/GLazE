@@ -31,6 +31,22 @@ const Main = ({ database }) => {
   ]);
   return (
     <main className="main">
+      <section className="mainAbout">
+        <h1 className="mainAboutTitle">뭐하는 곳 인가요?</h1>
+        <h2 className="mainAboutContent">
+          이 사이트는 각종 게임에 관련된 유용한 정보들을 빠르고 쉽게 접근할 수
+          있게 하기 위해 만들어졌습니다.
+          <br />
+          단순히 관련 정보들을 제공하는 사이트 자체로만 연결하는 것이 아니라,
+          Info Portal에서 추천하는 유용한 게시물로 바로 연결하여 필요한 정보를
+          검색하는 과정에서 발생하는 피로도를 낮추고자 합니다. 현재 대표적인
+          카테고리로 리그오브레전드, 로스트아크, 그리고 패스오브엑자일이 있으며,
+          추후 더 많은 카테고리를 구현할 계획입니다. <br />
+          현재 명확히 분류해 둔 카테고리 외의 잡다한 정보는 별도의 카테고리에
+          담겨 있습니다.
+        </h2>
+      </section>
+
       <section className="bookmark">
         <div className="bookmarkList">
           <h1 className="bookmarkTitle">즐겨찾기</h1>
@@ -52,7 +68,7 @@ const Main = ({ database }) => {
           <h1 className="bookmarkHowtoTitle">사용방법</h1>
           <h2 className="bookmarkHowtoContent">
             각 카테고리 내의 여러가지 항목들 중{" "}
-            <FontAwesomeIcon color="rgb(211, 211, 211)" icon={faStar} />이
+            <FontAwesomeIcon color="rgb(100, 100, 100)" icon={faStar} />이
             있다면 이를 클릭하여 메인페이지의 즐겨찾기에 추가할 수 있습니다.{" "}
             추가된 항목은&nbsp;
             <FontAwesomeIcon color="rgb(255, 215, 0)" icon={faStar} />로
@@ -61,22 +77,6 @@ const Main = ({ database }) => {
             즐겨찾기가 해제되어 사라집니다.
           </h2>
         </div>
-      </section>
-
-      <section className="mainAbout">
-        <h1 className="mainAboutTitle">뭐하는 곳 인가요?</h1>
-        <h2 className="mainAboutContent">
-          이 사이트는 각종 게임에 관련된 유용한 정보들을 빠르고 쉽게 접근할 수
-          있게 하기 위해 만들어졌습니다.
-          <br /> 단순히 관련 정보들을 제공하는 사이트 자체로만 연결하는 것이
-          아니라, Info Portal에서 추천하는 유용한 게시물로 바로 연결하여 필요한
-          정보를 검색하는 과정에서 발생하는 피로도를 낮추고자 합니다. 현재
-          대표적인 카테고리로 리그오브레전드, 로스트아크, 그리고
-          패스오브엑자일이 있으며, 추후 더 많은 카테고리를 구현할 계획입니다.{" "}
-          <br />
-          현재 명확히 분류해 둔 카테고리 외의 잡다한 정보는 별도의 카테고리에
-          담겨 있습니다.
-        </h2>
       </section>
     </main>
   );

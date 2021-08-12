@@ -1,8 +1,11 @@
 .bookmarkItem {
   display: flex;
   justify-content: space-between;
+
   .bookmarkDeleteBtn {
     color: rgb(255, 215, 0);
+    filter: drop-shadow(0 0 1px rgb(100, 100, 100));
+    cursor: pointer;
   }
   .bookmarkDeleteBtn:hover {
     color: rgb(206, 176, 9);
