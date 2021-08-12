@@ -1,56 +1,73 @@
 @import "../../styles/Colors.scss";
 
 .main {
-  width: 100%;
   display: flex;
   flex-direction: column;
+  width: 100%;
   flex: 1 1;
-  padding: 8px;
-  background-color: rgba($sub-brown-one, 0.7);
-  // background-color: rgba(white, 0.7);
+  padding: 1em;
+  background-color: rgba(white, 0.7);
+
+  .mainAbout {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: max-content;
+    place-self: center;
+    box-shadow: $sub-shadow;
+    border: 3px solid $sub-mint-one;
+    margin-bottom: 1em;
+
+    .mainAboutTitle {
+      background-color: rgba($sub-brown-two, 0.9);
+      border-bottom: 3px solid $sub-mint-one;
+      font-size: 2.5rem;
+      padding: 0.5rem;
+    }
+    .mainAboutContent {
+      background-color: rgba(white, 0.5);
+      font-size: 1.5rem;
+      padding: 0.5rem;
+    }
+  }
 
   .bookmark {
     display: flex;
+    flex-direction: column;
     width: 60%;
     height: max-content;
     place-self: center;
     box-shadow: $sub-shadow;
 
     .bookmarkList {
-      width: 50%;
-      background-color: rgba($sub-brown-two, 0.9);
+      width: 100%;
       border: 3px solid $sub-mint-one;
+      border-bottom: none;
 
       .bookmarkTitle {
-        padding: 2px;
         border-bottom: 3px solid $sub-mint-one;
+        background-color: rgba($sub-brown-two, 0.9);
+        padding: 2px;
+        padding: 0.5rem;
       }
       .bookmarkItems {
-        padding: 2px;
+        background-color: rgba(white, 0.5);
+        padding: 0.5rem;
       }
     }
     .bookmarkHowto {
-      width: 50%;
-      background-color: rgba($sub-brown-two, 0.9);
+      width: 100%;
       border: 3px solid $sub-mint-one;
 
       .bookmarkHowtoTitle {
-        padding: 2px;
         border-bottom: 3px solid $sub-mint-one;
+        background-color: rgba($sub-brown-two, 0.9);
+        padding: 0.5rem;
       }
       .bookmarkHowtoContent {
-        padding: 2px;
+        background-color: rgba(white, 0.5);
+        padding: 0.5rem;
       }
-    }
-  }
-
-  .mainAbout {
-    .mainAboutTitle {
-      background-color: rgba($sub-brown-two, 0.9);
-    }
-
-    .mainAboutContent {
-      background-color: rgba($sub-brown-two, 0.9);
     }
   }
 }

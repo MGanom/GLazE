@@ -1,3 +1,5 @@
+@import "../../../styles/Colors.scss";
+
 .siteItem {
   position: relative;
   display: flex;
@@ -6,16 +8,20 @@
   width: 20%;
   padding: 8px;
   margin: 8px 0px 8px 0px;
-  border: 3px solid black;
+  border: 1px solid black;
+  background-color: rgba($sub-brown-one, 0.5);
+
   .siteUrl {
-    height: 40%;
+    height: 3.5rem;
+    background-color: rgba($sub-brown-one, 0.5);
+
     .siteLogo {
       width: 100%;
       height: 100%;
+      filter: drop-shadow(0 0 1px black);
     }
   }
   .siteInfo {
-    // height: 60%;
     .siteName {
       margin: 5px 0px 5px 0px;
       text-align: center;
@@ -24,12 +30,14 @@
     }
     .siteDescription {
       font-size: 1rem;
+      border-top: 1px solid black;
+      background-color: rgba($sub-brown-one, 0.5);
     }
   }
   .bookmarkToggleBtn {
     position: absolute;
-    top: -7%;
-    right: -9%;
+    top: -1em;
+    right: -1.5em;
     cursor: pointer;
   }
 }
