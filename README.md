@@ -52,3 +52,10 @@
 -- 불필요한 코드 정리  
 -- 모든 페이지 디자인 개편  
 -- CSS의 폰트 및 여러 부분에 대해 px을 em 혹은 rem으로 수정  
+
+210813:  
+-- Guest로 로그인 시 북마크 기능 이용 불가하도록 구현  
+-- Guest로 로그인 시 Logout 버튼이 아닌 login 버튼이 나오도록 수정  
+-- Title을 Info Portal에서 GLazE로 변경  
+-- Vercel을 통해 사이트 배포 완료  
+-- 기타 CSS 
