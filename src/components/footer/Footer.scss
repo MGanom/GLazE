@@ -9,9 +9,11 @@
   box-shadow: $main-shadow;
 
   .myGithub {
-    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 1);
   }
   .myGithub:hover {
-    color: rgba(0, 0, 0, 1);
+    color: rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 1px $main-mint;
   }
 }

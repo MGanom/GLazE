@@ -16,18 +16,19 @@ const Lol = ({ database, youtube, sites }) => {
     setViewVideo(null);
   };
 
-  // useEffect(() => {
-  //   const date = new Date();
-  //   const published = new Date(
-  //     date.getFullYear(),
-  //     date.getMonth(),
-  //     date.getDay() - 13
-  //   );
+  useEffect(() => {
+    const date = new Date();
+    const published = new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDay() - 13
+    );
 
-  //   youtube
-  //     .search("리그오브레전드", published)
-  //     .then((videos) => setLol(videos));
-  // }, [youtube]);
+    youtube
+      .search("리그오브레전드", published)
+      .then((videos) => setLol(videos));
+  }, [youtube]);
+
   return (
     <main className="lol">
       <section className="youtube">

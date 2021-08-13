@@ -6,24 +6,25 @@
   flex-direction: column;
   align-items: center;
   width: 20%;
-  padding: 8px;
-  margin: 8px 0px 8px 0px;
+  padding: 0.5rem;
+  margin: 0.5rem 0 0.5rem 0;
   border: 1px solid black;
   background-color: rgba($sub-brown-one, 0.5);
 
   .siteUrl {
-    height: 3.5rem;
-    background-color: rgba($sub-brown-one, 0.5);
-
     .siteLogo {
       width: 100%;
-      height: 100%;
+      height: 3.5rem;
       filter: drop-shadow(0 0 1px black);
+    }
+    .siteLogo:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 10px $main-mint);
     }
   }
   .siteInfo {
     .siteName {
-      margin: 5px 0px 5px 0px;
+      margin: 0.2rem 0 0.2rem 0;
       text-align: center;
       font-size: 1.25rem;
       font-weight: bold;
@@ -31,7 +32,7 @@
     .siteDescription {
       font-size: 1rem;
       border-top: 1px solid black;
-      background-color: rgba($sub-brown-one, 0.5);
+      padding-top: 0.5rem;
     }
   }
   .bookmarkToggleBtn {
