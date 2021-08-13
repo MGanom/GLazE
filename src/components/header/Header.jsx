@@ -42,7 +42,7 @@ const Header = ({ auth, database, imageUploader }) => {
     <header className="header">
       <div id="main" className="title">
         <img
-          src="/images/title.png"
+          src="/images/glazeTitle.png"
           className="titleImg"
           alt="title"
           onClick={goToPage}
@@ -50,7 +50,11 @@ const Header = ({ auth, database, imageUploader }) => {
       </div>
       <div className="logout">
         <img
-          src="images/logoutButton.png"
+          src={
+            historyState?.isGuest
+              ? "images/loginButton.png"
+              : "images/logoutButton.png"
+          }
           className="logoutImg"
           alt="logout"
           onClick={onLogout}

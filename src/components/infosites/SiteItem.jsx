@@ -1,8 +1,10 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import Bookmark from "../bookmark/Bookmark";
 import "./styles/SiteItem.scss";
 
 const SiteItem = ({ database, id, logo, name, description, url }) => {
+  const history = useHistory();
   return (
     <section className="siteItem">
       <a
@@ -17,7 +19,9 @@ const SiteItem = ({ database, id, logo, name, description, url }) => {
         <div className="siteName">{name}</div>
         <div className="siteDescription">{description}</div>
       </div>
-      <Bookmark database={database} id={id} name={name} url={url} />
+      {!history?.location?.state?.isGuest ? (
+        <Bookmark database={database} id={id} name={name} url={url} />
+      ) : null}
     </section>
   );
 };

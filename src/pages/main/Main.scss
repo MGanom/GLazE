@@ -21,7 +21,7 @@
     .mainAboutTitle {
       background-color: rgba($sub-brown-two, 0.9);
       border-bottom: 3px solid $sub-mint-one;
-      font-size: 2.5rem;
+      font-size: 2rem;
       padding: 0.5rem;
     }
     .mainAboutContent {
@@ -53,6 +53,10 @@
       .bookmarkItems {
         background-color: rgba(white, 0.5);
         padding: 0.5rem;
+
+        .bookmarkName:hover {
+          text-shadow: 0 0 2px $main-mint;
+        }
       }
     }
     .bookmarkHowto {

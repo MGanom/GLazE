@@ -12,16 +12,17 @@ a {
     text-align: center;
     padding: 15px 0px;
     .titleImg {
-      width: 40%;
+      width: 25%;
       cursor: pointer;
-      filter: drop-shadow(0 0 5px $main-mint);
+      filter: drop-shadow(0 0 8px $main-mint);
     }
   }
   .logout {
+    width: 100%;
     text-align: end;
 
     .logoutImg {
-      width: 9%;
+      height: 2.5rem;
       padding: 5px;
       cursor: pointer;
       background-color: rgba($main-brown, 0.95);
@@ -60,11 +61,12 @@ a {
       }
       .selected {
         transform: scale(1.1);
-        box-shadow: 0 10px 5px -4px $main-mint;
+        filter: drop-shadow(0 0 5px $main-mint);
       }
       img:hover {
         transform: scale(1.1);
         transition: ease-in 50ms;
+        filter: drop-shadow(0 0 5px $main-mint);
       }
     }
     .lolMenu {
