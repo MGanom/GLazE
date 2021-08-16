@@ -1,6 +1,6 @@
 .profileEditor {
   width: 100%;
-  margin-left: 8px;
+  margin-left: 0.5em;
 
   .profileForm {
     display: flex;
@@ -25,10 +25,10 @@
         width: 15%;
       }
       .gender {
-        padding: 1px 2px 1px 2px;
-        border-width: 1px;
-        margin-left: 3px;
-        margin-right: 3px;
+        padding: 0.063em 0.125em 1px 0.063em;
+        border-width: 0.063em;
+        margin-left: 0.2em;
+        margin-right: 0.2em;
       }
       .email {
         width: 30%;
