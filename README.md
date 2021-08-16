@@ -58,4 +58,8 @@
 -- Guest로 로그인 시 Logout 버튼이 아닌 login 버튼이 나오도록 수정  
 -- Title을 Info Portal에서 GLazE로 변경  
 -- Vercel을 통해 사이트 배포 완료  
--- 기타 CSS 
+-- 기타 CSS  
+
+210816:  
+-- px단위로 작성된 css 대부분을 em으로 수정  
+-- 코드 부분 정리  
