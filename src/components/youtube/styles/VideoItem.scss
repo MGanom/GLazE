@@ -3,8 +3,8 @@
 .videoContainer {
   width: 30%;
   height: 25%;
-  padding: 10px;
-  margin: 10px;
+  padding: 0.625em;
+  margin: 0.625em;
   white-space: nowrap;
   border: 1px solid black;
   background-color: rgba($sub-brown-one, 0.5);
@@ -19,7 +19,7 @@
     }
     .videoInfo {
       width: 70%;
-      margin-left: 8px;
+      margin-left: 0.5em;
 
       .title {
         font-size: 1.1rem;
@@ -28,7 +28,7 @@
         text-overflow: ellipsis;
       }
       .channel {
-        margin-top: 5px;
+        margin-top: 0.3em;
         font-size: 1rem;
       }
     }

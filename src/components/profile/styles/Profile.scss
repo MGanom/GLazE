@@ -12,13 +12,13 @@
     width: 50%;
     background-color: rgba($main-brown, 0.8);
     border: 3px solid rgba($main-mint, 1);
-    border-radius: 10px;
+    border-radius: 0.625em;
 
     .profileEditBtn {
       position: absolute;
       right: 0;
       top: 7px;
-      margin: 0px 10px 0px 10px;
+      margin: 0 0.625em 0 0.625em;
       height: min-content;
       width: 50px;
     }

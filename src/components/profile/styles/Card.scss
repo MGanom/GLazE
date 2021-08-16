@@ -1,10 +1,10 @@
 @import "../../../styles/Colors.scss";
 
 .profileCard {
-  padding: 7px;
+  padding: 0.44em;
   display: flex;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 0.625em;
   .profileImg {
     min-width: 5.8rem;
     width: 5.8rem;
@@ -13,7 +13,7 @@
     // filter: drop-shadow(0 0 1px $sub-mint-one);
   }
   .profileInfo {
-    margin-left: 7px;
+    margin-left: 0.44em;
 
     .profileName {
       font-size: 1.2rem;
