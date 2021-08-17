@@ -30,6 +30,8 @@
       .channel {
         margin-top: 0.3em;
         font-size: 1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }
