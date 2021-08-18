@@ -127,3 +127,15 @@ table {
   box-sizing: border-box;
   line-height: 1.15;
 }
+
+html {
+  @media (max-width: 800px) {
+    font-size: 14px;
+  }
+  @media (max-width: 650px) {
+    font-size: 12px;
+  }
+  @media (max-width: 500px) {
+    font-size: 10px;
+  }
+}

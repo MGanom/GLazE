@@ -5,27 +5,31 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 
   .profileCardContainer {
     position: relative;
     display: flex;
-    width: 50%;
+    width: 100%;
     background-color: rgba($main-brown, 0.8);
     border: 3px solid rgba($main-mint, 1);
     border-radius: 0.625em;
 
     .profileEditBtn {
       position: absolute;
-      right: 0;
-      top: 7px;
+      right: -0.3rem;
+      top: 0.3rem;
       margin: 0 0.625em 0 0.625em;
-      height: min-content;
-      width: 50px;
+      height: max-content;
+      width: max-content;
+      font-size: 0.9rem;
     }
   }
 
   .profileEditorContainer {
     display: flex;
-    width: 50%;
+    width: 100%;
   }
 }
