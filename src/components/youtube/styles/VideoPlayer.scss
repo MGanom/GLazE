@@ -3,10 +3,14 @@
   position: absolute;
   width: 70%;
   height: 106%;
-  left: 15.5%;
+  left: 15%;
   top: -3%;
   border: 3px solid rgba($main-mint, 1);
   box-shadow: 0 0 10px 3px rgba($main-mint, 1);
+  @media (max-width: 800px) {
+    width: 90%;
+    left: 5%;
+  }
   .player {
     width: 100%;
     height: 100%;
@@ -23,6 +27,11 @@
   background-color: rgba($main-brown, 0.9);
   box-shadow: $main-shadow;
   cursor: pointer;
+  @media (max-width: 800px) {
+    right: -3%;
+    width: 3.5em;
+    height: 3.5em;
+  }
 }
 .videoCloseBtn:hover {
   background-color: rgba($main-brown, 1);

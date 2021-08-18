@@ -18,11 +18,12 @@ a {
     }
   }
   .logout {
+    display: flex;
+    justify-content: flex-end;
     width: 100%;
-    text-align: end;
 
     .logoutImg {
-      height: 2.5rem;
+      width: 10%;
       padding: 0.3em;
       cursor: pointer;
       background-color: rgba($main-brown, 0.95);
@@ -35,7 +36,6 @@ a {
   }
   .profileContainer {
     display: flex;
-    flex-direction: column;
     padding: 0.3em;
     background-color: rgba($main-brown, 0.95);
     border: 3px solid rgba($main-mint, 1);
