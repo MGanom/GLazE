@@ -109,4 +109,7 @@ map을 통해 각 페이지에 연결, 구현
 * 210818
   * min-width를 제거하고 작은 화면 크기에도 맞게 반응형 웹 업데이트
   * 기타 CSS
+* 210819
+  * media query breakpoint를 새로 설정
+  * 기타 CSS
 </details>
