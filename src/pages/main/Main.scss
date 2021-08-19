@@ -28,6 +28,13 @@
       background-color: rgba(white, 0.5);
       font-size: 1.2rem;
       padding: 0.5rem;
+      @media (max-width: 425px) {
+        overflow: hidden;
+        max-height: 6em;
+      }
+    }
+    .mainAboutContent:hover {
+      max-height: none;
     }
   }
 
@@ -51,8 +58,9 @@
         padding: 0.5rem;
       }
       .bookmarkItems {
+        height: min-content;
         background-color: rgba(white, 0.5);
-        padding: 0.5rem;
+        padding: 0.25rem 0.5rem 0.25rem 0.5rem;
 
         .bookmarkName:hover {
           text-shadow: 0 0 2px $main-mint;
