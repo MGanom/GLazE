@@ -129,13 +129,13 @@ table {
 }
 
 html {
-  @media (max-width: 800px) {
+  @media (max-width: 992px) {
     font-size: 14px;
   }
-  @media (max-width: 650px) {
+  @media (max-width: 768px) {
     font-size: 12px;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 576px) {
     font-size: 10px;
   }
 }
