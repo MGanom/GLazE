@@ -24,13 +24,20 @@
       font-size: 1.7rem;
       padding: 0.5rem;
     }
+    .mainAboutTitle:after {
+      @media (max-width: 425px) {
+        margin-left: 1rem;
+        font-size: 1rem;
+        content: "↓ 펼치기";
+      }
+    }
     .mainAboutContent {
       background-color: rgba(white, 0.5);
       font-size: 1.2rem;
       padding: 0.5rem;
       @media (max-width: 425px) {
         overflow: hidden;
-        max-height: 6em;
+        max-height: 2em;
       }
     }
     .mainAboutContent:hover {
@@ -41,7 +48,7 @@
   .bookmark {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 95%;
     height: max-content;
     place-self: center;
     box-shadow: $sub-shadow;
@@ -52,6 +59,7 @@
       border-bottom: none;
 
       .bookmarkTitle {
+        font-size: 1.4rem;
         border-bottom: 3px solid $sub-mint-one;
         background-color: rgba($sub-brown-two, 0.9);
         padding: 0.125em;
@@ -72,13 +80,28 @@
       border: 3px solid $sub-mint-one;
 
       .bookmarkHowtoTitle {
+        font-size: 1.4rem;
         border-bottom: 3px solid $sub-mint-one;
         background-color: rgba($sub-brown-two, 0.9);
         padding: 0.5rem;
       }
+      .bookmarkHowtoTitle:after {
+        @media (max-width: 425px) {
+          margin-left: 1rem;
+          font-size: 1rem;
+          content: "↓ 펼치기";
+        }
+      }
       .bookmarkHowtoContent {
         background-color: rgba(white, 0.5);
         padding: 0.5rem;
+        @media (max-width: 425px) {
+          overflow: hidden;
+          max-height: 2em;
+        }
+      }
+      .bookmarkHowtoContent:hover {
+        max-height: none;
       }
     }
   }
