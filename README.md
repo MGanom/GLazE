@@ -98,7 +98,7 @@ map을 통해 각 페이지에 연결, 구현
 </details>
 
 <details>
-<summary>210816~210818</summary>
+<summary>210816~210820</summary>
 
 * 210816
   * px단위로 작성된 css 대부분을 em으로 수정  
@@ -111,5 +111,9 @@ map을 통해 각 페이지에 연결, 구현
   * 기타 CSS
 * 210819
   * media query breakpoint를 새로 설정
+  * 기타 CSS
+* 210820
+  * 반응형 CSS 추가 적용
+  * Header, sitelist css 버그 수정
   * 기타 CSS
 </details>
