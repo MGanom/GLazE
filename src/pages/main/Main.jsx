@@ -27,7 +27,6 @@ const Main = ({ database }) => {
     database,
     history?.location?.state?.isGuest,
     history?.location?.state?.id,
-    bookmark,
   ]);
   return (
     <main className="main">

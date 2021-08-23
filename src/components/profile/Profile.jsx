@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Card from "./Card";
 import Editor from "./Editor";
 import "./styles/Profile.scss";
 
-const Profile = ({ database, imageUploader }) => {
+const Profile = memo(({ database, imageUploader }) => {
   const history = useHistory();
   const [profile, setProfile] = useState({});
   const [isEdit, setIsEdit] = useState(false);
@@ -58,6 +58,6 @@ const Profile = ({ database, imageUploader }) => {
       </div>
     </section>
   );
-};
+});
 
 export default Profile;

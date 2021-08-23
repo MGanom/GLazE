@@ -33,5 +33,3 @@ class Auth {
 }
 
 export default Auth;
-
-// "HRf8SrgXkchlgzC29stuTpi99c93"
