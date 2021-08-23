@@ -19,6 +19,7 @@ class Database {
     const ref = firebaseDatabase.ref(`${userId}/bookmark`);
     ref.on("value", (snapshot) => {
       snapshot.val() && onUpdate(snapshot.val());
+      !snapshot.val() && onUpdate({});
     });
     return () => ref.off();
   }

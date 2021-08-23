@@ -1,4 +1,3 @@
-import React from "react";
 import "./styles/BookmarkList.scss";
 import { useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,13 +21,11 @@ const BookmarkList = ({ database, id, name, url }) => {
       >
         {name}
       </a>
-      {!id ? null : (
-        <FontAwesomeIcon
-          className="bookmarkDeleteBtn"
-          icon={faStar}
-          onClick={deleteBookmark}
-        />
-      )}
+      <FontAwesomeIcon
+        className="bookmarkDeleteBtn"
+        icon={faStar}
+        onClick={deleteBookmark}
+      />
     </section>
   );
 };
