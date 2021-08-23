@@ -98,7 +98,7 @@ map을 통해 각 페이지에 연결, 구현
 </details>
 
 <details>
-<summary>210816~210820</summary>
+<summary>210816~210823</summary>
 
 * 210816
   * px단위로 작성된 css 대부분을 em으로 수정  
@@ -116,4 +116,7 @@ map을 통해 각 페이지에 연결, 구현
   * 반응형 CSS 추가 적용
   * Header, sitelist css 버그 수정
   * 기타 CSS
+* 210823
+  * 불필요하게 렌더되는 코드 memo로 개선
+  * 북마크를 지워도 새로고침 전까지 사라지지 않던 버그 수정
 </details>
