@@ -21,11 +21,13 @@ const BookmarkList = ({ database, id, name, url }) => {
       >
         {name}
       </a>
-      <FontAwesomeIcon
-        className="bookmarkDeleteBtn"
-        icon={faStar}
-        onClick={deleteBookmark}
-      />
+      {!history?.location?.state?.isGuest ? (
+        <FontAwesomeIcon
+          className="bookmarkDeleteBtn"
+          icon={faStar}
+          onClick={deleteBookmark}
+        />
+      ) : null}
     </section>
   );
 };
