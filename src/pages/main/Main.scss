@@ -67,12 +67,49 @@
       }
       .bookmarkItems {
         height: min-content;
+        border-bottom: 3px solid $sub-mint-one;
         background-color: rgba(white, 0.5);
         padding: 0.25rem 0.5rem 0rem 0.5rem;
 
         .bookmarkName:hover {
           text-shadow: 0 0 2px $main-mint;
         }
+      }
+    }
+    .bookmarkLinkAdd {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      border-left: 3px solid $sub-mint-one;
+      border-right: 3px solid $sub-mint-one;
+
+      .bookmarkLinkName,
+      .bookmarkURLInput,
+      .bookmarkLinkSubmit {
+        font-size: 1rem;
+        border: none;
+        background-color: rgba(white, 1);
+      }
+      .bookmarkLinkName:focus,
+      .bookmarkURLInput:focus {
+        outline: 0;
+        @media (max-width: 425px) {
+          flex: 3;
+        }
+      }
+      .bookmarkLinkName {
+        width: 100%;
+        flex: 1;
+        border-right: 3px solid $sub-mint-one;
+      }
+      .bookmarkURLInput {
+        width: 100%;
+        flex: 3;
+        border-right: 3px solid $sub-mint-one;
+      }
+      .bookmarkLinkSubmit {
+        width: max-content;
+        height: max-content;
       }
     }
     .bookmarkHowto {

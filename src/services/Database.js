@@ -14,6 +14,18 @@ class Database {
   }
   //
   //
+  bookmarkId(userId) {
+    const ref = firebaseDatabase.ref(`${userId}/bookmark`);
+    let id = 0;
+    ref.on("value", (snapshot) => {
+      if (snapshot.val()) {
+        id = Object.keys(snapshot.val()).length + 1;
+      } else {
+        id = 1;
+      }
+    });
+    return id;
+  }
 
   syncBookmark(userId, onUpdate) {
     const ref = firebaseDatabase.ref(`${userId}/bookmark`);

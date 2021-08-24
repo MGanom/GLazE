@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import BookmarkList from "../../components/bookmark/BookmarkList";
 import "./Main.scss";
@@ -8,6 +8,9 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 const Main = ({ database }) => {
   const history = useHistory();
   const [bookmark, setBookmark] = useState({});
+  const URLRef = useRef();
+  const nameRef = useRef();
+  const dataid = database.bookmarkId(history?.location?.state?.id);
 
   useEffect(() => {
     if (history?.location?.state?.isGuest) {
@@ -28,6 +31,23 @@ const Main = ({ database }) => {
     history?.location?.state?.isGuest,
     history?.location?.state?.id,
   ]);
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const url =
+      URLRef.current.value.indexOf("http") === 0
+        ? URLRef.current.value
+        : "http://" + URLRef.current.value;
+    const mark = {
+      id: dataid,
+      name: nameRef.current.value,
+      url: url,
+    };
+    database.saveBookmark(history?.location?.state?.id, mark);
+    nameRef.current.value = "";
+    URLRef.current.value = "";
+  };
+
   return (
     <main className="main">
       <section className="mainAbout">
@@ -62,25 +82,63 @@ const Main = ({ database }) => {
             })}
           </div>
         </div>
+        <form className="bookmarkLinkAdd">
+          <input
+            className="bookmarkLinkName"
+            type="text"
+            name="name"
+            ref={nameRef}
+            value={
+              history?.location?.state?.isGuest
+                ? "이용을 위해 로그인 해주세요."
+                : null
+            }
+            placeholder="링크 이름"
+          />
+          <input
+            className="bookmarkURLInput"
+            type="text"
+            name="url"
+            ref={URLRef}
+            value={
+              history?.location?.state?.isGuest
+                ? "이용을 위해 로그인 해주세요."
+                : null
+            }
+            placeholder="링크 주소를 입력하세요"
+          />
+          <button
+            className="bookmarkLinkSubmit"
+            onClick={onSubmit}
+            disabled={history?.location?.state?.isGuest ? true : false}
+          >
+            추가
+          </button>
+        </form>
         <div className="bookmarkHowto">
           <h1 className="bookmarkHowtoTitle">사용방법</h1>
           <h2 className="bookmarkHowtoContent">
-            각 카테고리 내의 여러가지 항목들 중{" "}
+            1. 즐겨찾기 목록 하단에 자신이 등록하고 싶은 링크의 이름과 주소를
+            입력하고 추가 버튼을 누르면 즐겨찾기가 등록됩니다. <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;* 원활한 이용을 위해 반드시 정확한 주소를
+            입력해야 합니다. <br />
+            2. 각 카테고리 내의 여러가지 항목들 중{" "}
             <FontAwesomeIcon color="rgb(100, 100, 100)" icon={faStar} />이
-            있다면 이를 클릭하여 메인페이지의 즐겨찾기에 추가할 수 있습니다.{" "}
+            있다면 이를 클릭하여 메인페이지의 즐겨찾기 목록에 추가할 수 있으며,{" "}
             추가된 항목은&nbsp;
             <FontAwesomeIcon
               color="rgb(255, 215, 0)"
               filter="drop-shadow(0 0 1px rgb(100, 100, 100)"
               icon={faStar}
             />
-            로 표시되며, 메인페이지에서{" "}
+            로 표시됩니다. <br />
+            3.등록된 즐겨찾기는{" "}
             <FontAwesomeIcon
               color="rgb(255, 215, 0)"
               filter="drop-shadow(0 0 1px rgb(100, 100, 100)"
               icon={faStar}
             />
-            를 누를 시 즐겨찾기가 해제되어 사라집니다.
+            를 누를 시 즐겨찾기가 해제되어 목록에서 사라집니다.
           </h2>
         </div>
       </section>
