@@ -8,6 +8,13 @@ GLazE는 Game Lazily & Easily의 약자로, 각종 게임에 관련된 유용한
 * 1차완성: 210802 ~ 210813
 * 디자인 및 코드 정리: 210816 ~
 
+## 사용 기술
+HTML, CSS(SASS), JavaScript(Axios), React(CRA, React Router, Hooks)
+
+## 사용 서비스
+Firebase, Cloudinary, Youtube API, Postman, Vercel
+
+
 ## 진행상황
 <details>
 <summary>210802</summary>
