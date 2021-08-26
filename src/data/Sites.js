@@ -69,7 +69,7 @@ export const lostarksites = [
     name: "모험의 서&모코코",
     description:
       "'천묘화'님이 운영하시는 '작고 소중한 게임블로그'라는 블로그로, 모험의 서와 모코코에 대한 공략을 볼 수 있는 사이트",
-    url: "https://gam3.tistory.com/category/%EB%AA%A8%ED%97%98%EC%9D%98%20%EC%84%9C",
+    url: "https://gam3.tistory.com/",
   },
 ];
 

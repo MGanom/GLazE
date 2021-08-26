@@ -5,13 +5,13 @@
 .bookmarkBtnOff:hover {
   transform: scale(1.1);
   color: rgb(255, 215, 0);
-  filter: drop-shadow(0 0 3px rgb(100, 100, 100));
+  filter: drop-shadow(0 0 0.188rem rgb(100, 100, 100));
 }
 
 .bookmarkBtnOn {
   font-size: 2rem;
   color: rgb(255, 215, 0);
-  filter: drop-shadow(0 0 3px rgb(100, 100, 100));
+  filter: drop-shadow(0 0 0.188rem rgb(100, 100, 100));
 }
 .bookmarkBtnOn:hover {
   transform: scale(0.9);

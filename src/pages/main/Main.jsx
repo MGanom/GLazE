@@ -88,24 +88,24 @@ const Main = ({ database }) => {
             type="text"
             name="name"
             ref={nameRef}
-            value={
+            readOnly={history?.location?.state?.isGuest ? true : false}
+            placeholder={
               history?.location?.state?.isGuest
-                ? "이용을 위해 로그인 해주세요."
-                : null
+                ? "로그인이 필요합니다."
+                : "링크 이름"
             }
-            placeholder="링크 이름"
           />
           <input
             className="bookmarkURLInput"
             type="text"
             name="url"
             ref={URLRef}
-            value={
+            readOnly={history?.location?.state?.isGuest ? true : false}
+            placeholder={
               history?.location?.state?.isGuest
-                ? "이용을 위해 로그인 해주세요."
-                : null
+                ? "로그인이 필요합니다."
+                : "링크 주소를 입력하세요."
             }
-            placeholder="링크 주소를 입력하세요"
           />
           <button
             className="bookmarkLinkSubmit"
@@ -128,14 +128,14 @@ const Main = ({ database }) => {
             추가된 항목은&nbsp;
             <FontAwesomeIcon
               color="rgb(255, 215, 0)"
-              filter="drop-shadow(0 0 1px rgb(100, 100, 100)"
+              filter="drop-shadow(0 0 0.063rem rgb(100, 100, 100)"
               icon={faStar}
             />
             로 표시됩니다. <br />
             3.등록된 즐겨찾기는{" "}
             <FontAwesomeIcon
               color="rgb(255, 215, 0)"
-              filter="drop-shadow(0 0 1px rgb(100, 100, 100)"
+              filter="drop-shadow(0 0 0.063rem rgb(100, 100, 100)"
               icon={faStar}
             />
             를 누를 시 즐겨찾기가 해제되어 목록에서 사라집니다.
