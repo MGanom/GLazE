@@ -1,16 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./Login.scss";
 
 const Login = ({ auth }) => {
   const history = useHistory();
 
-  const goToMain = (userId, isGuest) => {
-    history.push({
-      pathname: "/main",
-      state: { id: userId, isGuest: isGuest },
-    });
-  };
+  const goToMain = useCallback(
+    (userId, isGuest) => {
+      history.push({
+        pathname: "/main",
+        state: { id: userId, isGuest: isGuest },
+      });
+    },
+    [history]
+  );
 
   const onLogin = (e) => {
     auth
@@ -21,14 +24,14 @@ const Login = ({ auth }) => {
   const onGuestLogin = () => {
     auth
       .guestLogin() //
-      .then(() => goToMain());
+      .then((data) => goToMain(data.user.uid));
   };
 
   useEffect(() => {
     auth.onAuthChange((user) => {
       user && goToMain(user.uid, user.isAnonymous);
     });
-  });
+  }, [auth, goToMain]);
 
   return (
     <>

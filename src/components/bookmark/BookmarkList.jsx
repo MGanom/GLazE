@@ -17,9 +17,10 @@ const BookmarkList = ({ database, id, name, url }) => {
         target="_blank"
         rel="noopener noreferrer"
         href={url}
-        className="bookmarkName"
+        className="bookmarkLink"
       >
-        {name}
+        <div className="bookmarkName">{name}</div>
+        <div className="bookmarkURL">{url}</div>
       </a>
       {!history?.location?.state?.isGuest ? (
         <FontAwesomeIcon

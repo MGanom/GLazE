@@ -15,12 +15,12 @@
     height: max-content;
     place-self: center;
     box-shadow: $sub-shadow;
-    border: 3px solid $sub-mint-one;
+    border: 0.188rem solid $sub-mint-one;
     margin-bottom: 1em;
 
     .mainAboutTitle {
       background-color: rgba($sub-brown-two, 0.9);
-      border-bottom: 3px solid $sub-mint-one;
+      border-bottom: 0.188rem solid $sub-mint-one;
       font-size: 1.7rem;
       padding: 0.5rem;
     }
@@ -55,33 +55,29 @@
 
     .bookmarkList {
       width: 100%;
-      border: 3px solid $sub-mint-one;
+      border: 0.188rem solid $sub-mint-one;
       border-bottom: none;
 
       .bookmarkTitle {
-        font-size: 1.4rem;
-        border-bottom: 3px solid $sub-mint-one;
+        font-size: 1.7rem;
+        border-bottom: 0.188rem solid $sub-mint-one;
         background-color: rgba($sub-brown-two, 0.9);
         padding: 0.125em;
         padding: 0.5rem;
       }
       .bookmarkItems {
         height: min-content;
-        border-bottom: 3px solid $sub-mint-one;
+        border-bottom: 0.188rem solid $sub-mint-one;
         background-color: rgba(white, 0.5);
-        padding: 0.25rem 0.5rem 0rem 0.5rem;
-
-        .bookmarkName:hover {
-          text-shadow: 0 0 2px $main-mint;
-        }
+        padding: 0.5rem 0.5rem 0rem 0.5rem;
       }
     }
     .bookmarkLinkAdd {
       display: flex;
       width: 100%;
       align-items: center;
-      border-left: 3px solid $sub-mint-one;
-      border-right: 3px solid $sub-mint-one;
+      border-left: 0.188rem solid $sub-mint-one;
+      border-right: 0.188rem solid $sub-mint-one;
 
       .bookmarkLinkName,
       .bookmarkURLInput,
@@ -100,12 +96,12 @@
       .bookmarkLinkName {
         width: 100%;
         flex: 1;
-        border-right: 3px solid $sub-mint-one;
+        border-right: 0.188rem solid $sub-mint-one;
       }
       .bookmarkURLInput {
         width: 100%;
         flex: 3;
-        border-right: 3px solid $sub-mint-one;
+        border-right: 0.188rem solid $sub-mint-one;
       }
       .bookmarkLinkSubmit {
         width: max-content;
@@ -114,11 +110,11 @@
     }
     .bookmarkHowto {
       width: 100%;
-      border: 3px solid $sub-mint-one;
+      border: 0.188rem solid $sub-mint-one;
 
       .bookmarkHowtoTitle {
-        font-size: 1.4rem;
-        border-bottom: 3px solid $sub-mint-one;
+        font-size: 1.5rem;
+        border-bottom: 0.188rem solid $sub-mint-one;
         background-color: rgba($sub-brown-two, 0.9);
         padding: 0.5rem;
       }
@@ -131,6 +127,7 @@
       }
       .bookmarkHowtoContent {
         background-color: rgba(white, 0.5);
+        font-size: 1.1rem;
         padding: 0.5rem;
         @media (max-width: 425px) {
           overflow: hidden;

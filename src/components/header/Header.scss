@@ -12,9 +12,9 @@ a {
     text-align: center;
     padding: 0.9em 0;
     .titleImg {
-      width: 25%;
+      width: 20rem;
       cursor: pointer;
-      filter: drop-shadow(0 0 8px $main-mint);
+      filter: drop-shadow(0 0 0.5rem $main-mint);
     }
   }
   .logout {
@@ -23,11 +23,11 @@ a {
     width: 100%;
 
     .logoutImg {
-      width: 10%;
+      width: 8rem;
       padding: 0.3em;
       cursor: pointer;
       background-color: rgba($main-brown, 0.95);
-      border: 3px solid rgba($main-mint, 1);
+      border: 0.188rem solid rgba($main-mint, 1);
       box-shadow: $main-shadow;
     }
     .logoutImg:hover {
@@ -38,7 +38,7 @@ a {
     display: flex;
     padding: 0.3em;
     background-color: rgba($main-brown, 0.95);
-    border: 3px solid rgba($main-mint, 1);
+    border: 0.188rem solid rgba($main-mint, 1);
     box-shadow: $main-shadow;
   }
 
@@ -48,7 +48,7 @@ a {
     align-items: center;
     padding: 0.625rem 0;
     background-color: rgba($main-brown, 0.95);
-    border: 3px solid $main-mint;
+    border: 0.188rem solid $main-mint;
     box-shadow: $main-shadow;
     border-top: none;
 
@@ -57,29 +57,29 @@ a {
       img {
         width: 100%;
         cursor: pointer;
-        filter: drop-shadow(0 0 1px black);
+        filter: drop-shadow(0 0 0.063rem black);
       }
       .selected {
         transform: scale(1.1);
-        filter: drop-shadow(0 0 5px $main-mint);
+        filter: drop-shadow(0 0 0.313rem $main-mint);
       }
       img:hover {
         transform: scale(1.1);
         transition: ease-in 50ms;
-        filter: drop-shadow(0 0 5px $main-mint);
+        filter: drop-shadow(0 0 0.313rem $main-mint);
       }
     }
     .lolMenu {
-      width: 5rem;
+      width: 7rem;
     }
     .lostarkMenu {
-      width: 8rem;
+      width: 10rem;
     }
     .poeMenu {
-      width: 4rem;
+      width: 5rem;
     }
     .etcMenu {
-      width: 6rem;
+      width: 8rem;
     }
   }
 }
