@@ -137,3 +137,12 @@ map을 통해 각 페이지에 연결, 구현
 * Guest가 사용할 수 있는 기능 추가 제한
 
 </details>
+
+<details>
+<summary>210826</summary>
+  
+* 즐겨찾기 목록 크기 조정, 링크 주소가 나오도록 구현
+* 고정 수치를 제외한 모든 px 단위 rem으로 변경
+* 여러 작동 시 발생하는 error와 warning 등 해결
+* 기타 CSS
+</details>
