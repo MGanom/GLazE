@@ -146,3 +146,10 @@ map을 통해 각 페이지에 연결, 구현
 * 여러 작동 시 발생하는 error와 warning 등 해결
 * 기타 CSS
 </details>
+
+<details>
+<summary>210827</summary>
+  
+* Header 메뉴 크기 변경
+* 작은 화면에서 이용하기 더 편하게 최적화
+</details>
