@@ -2,10 +2,12 @@
   font-size: 2rem;
   color: rgb(100, 100, 100);
 }
-.bookmarkBtnOff:hover {
-  transform: scale(1.1);
-  color: rgb(255, 215, 0);
-  filter: drop-shadow(0 0 0.188rem rgb(100, 100, 100));
+@media (pointer: fine) {
+  .bookmarkBtnOff:hover {
+    transform: scale(1.1);
+    color: rgb(255, 215, 0);
+    filter: drop-shadow(0 0 0.188rem rgb(100, 100, 100));
+  }
 }
 
 .bookmarkBtnOn {
@@ -13,7 +15,9 @@
   color: rgb(255, 215, 0);
   filter: drop-shadow(0 0 0.188rem rgb(100, 100, 100));
 }
-.bookmarkBtnOn:hover {
-  transform: scale(0.9);
-  color: rgb(206, 176, 9);
+@media (pointer: fine) {
+  .bookmarkBtnOn:hover {
+    transform: scale(0.9);
+    color: rgb(206, 176, 9);
+  }
 }
