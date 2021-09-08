@@ -138,7 +138,11 @@ const Main = ({ database }) => {
               filter="drop-shadow(0 0 0.063rem rgb(100, 100, 100)"
               icon={faStar}
             />
-            를 누를 시 즐겨찾기가 해제되어 목록에서 사라집니다.
+            를 누를 시 즐겨찾기가 해제되어 목록에서 사라집니다. <br />
+            <br />
+            <div style={{ color: "blue" }}>
+              ※ 게스트로 로그인 시 즐겨찾기 기능을 사용할 수 없습니다.
+            </div>
           </h2>
         </div>
       </section>
