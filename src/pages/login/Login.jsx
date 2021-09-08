@@ -22,9 +22,7 @@ const Login = ({ auth }) => {
   };
 
   const onGuestLogin = () => {
-    auth
-      .guestLogin() //
-      .then((data) => goToMain(data.user.uid));
+    auth.guestLogin(); //
   };
 
   useEffect(() => {
