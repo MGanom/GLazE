@@ -67,7 +67,10 @@ const Main = ({ database }) => {
 
       <section className="bookmark">
         <div className="bookmarkList">
-          <h1 className="bookmarkTitle">즐겨찾기</h1>
+          <h1 className="bookmarkTitle">
+            즐겨찾기{" "}
+            {history.location.state.isGuest === true ? "(사용 불가)" : null}
+          </h1>
           <div className="bookmarkItems">
             {Object.keys(bookmark).map((key, idx) => {
               return (
