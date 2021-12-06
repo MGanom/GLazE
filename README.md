@@ -223,3 +223,10 @@ map을 통해 각 페이지에 연결, 구현
   
 </details>
 
+<details>
+<summary>211206</summary>
+  
+* Footer에 건의사항 및 버그 제보 버튼 추가 및 작업 중
+* Modal Component 작업 중
+  
+</details>
