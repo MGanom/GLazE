@@ -1,0 +1,43 @@
+@import "../../styles/Colors.scss";
+
+.modal {
+  .modalSwitch:hover {
+    color: rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 0.063rem $main-mint;
+    cursor: pointer;
+  }
+
+  .modalContainer {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background-color: rgba($sub-brown-two, 0.9);
+    border: 3px solid rgba($main-mint, 1);
+    box-shadow: $main-shadow;
+
+    .modalCloseBtn {
+      align-self: flex-end;
+    }
+    .modalCloseBtn:hover {
+      color: rgba(0, 0, 0, 0.5);
+      text-shadow: 0 0 0.063rem $main-mint;
+      cursor: pointer;
+    }
+
+    .modalTitle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 20%;
+      background-color: rgba(white, 0.5);
+    }
+
+    .modalContent {
+      height: 100%;
+    }
+  }
+}

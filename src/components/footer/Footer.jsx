@@ -1,4 +1,4 @@
-import React from "react";
+import Modal from "../modal/Modal";
 import "./Footer.scss";
 
 const Footer = () => {
@@ -12,8 +12,13 @@ const Footer = () => {
       >
         MGanom's Github
       </a>
-      <div className="copyright">
-        &copy; Copyright 2021, MGanom. All Rights Reserved
+      <div className="copyrightAndReport">
+        <div className="copyright">
+          &copy; Copyright 2021, MGanom. All Rights Reserved
+        </div>
+        <div className="report">
+          <Modal usage={"건의사항 및 버그 제보"} />
+        </div>
       </div>
     </main>
   );
