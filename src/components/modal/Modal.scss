@@ -7,6 +7,16 @@
     cursor: pointer;
   }
 
+  .modalBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // height: app.width;
+    background-color: white;
+    opacity: 0.8;
+  }
+
   .modalContainer {
     display: flex;
     flex-direction: column;
@@ -21,6 +31,7 @@
 
     .modalCloseBtn {
       align-self: flex-end;
+      font-size: 1.3rem;
     }
     .modalCloseBtn:hover {
       color: rgba(0, 0, 0, 0.5);
