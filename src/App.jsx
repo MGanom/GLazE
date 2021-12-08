@@ -49,7 +49,7 @@ function App({ youtube, auth, database, imageUploader }) {
               <Route exact path="/etc">
                 <Etc youtube={youtube} database={database} sites={othersites} />
               </Route>
-              <Footer />
+              <Footer database={database} />
             </>
           </Switch>
         </Router>

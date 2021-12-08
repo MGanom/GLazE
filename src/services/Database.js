@@ -54,6 +54,32 @@ class Database {
   removeBookmark(userId, id) {
     firebaseDatabase.ref(`${userId}/bookmark/${id}`).remove();
   }
+
+  reportId() {
+    const ref = firebaseDatabase.ref(`report`);
+    let id = 0;
+    ref.on("value", (snapshot) => {
+      if (snapshot.val()) {
+        id = Object.keys(snapshot.val()).length + 1;
+      } else {
+        id = 1;
+      }
+    });
+    return id;
+  }
+
+  reporterNick(userId) {
+    const ref = firebaseDatabase.ref(`${userId}`);
+    ref.on("value", (snapshot) => {
+      if (snapshot.val()) {
+        return userId;
+      }
+    });
+  }
+
+  saveReport(data) {
+    firebaseDatabase.ref("report").set(data);
+  }
 }
 
 export default Database;

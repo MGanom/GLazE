@@ -12,8 +12,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    // height: app.width;
-    background-color: white;
+    height: 100%;
+    background-color: black;
     opacity: 0.8;
   }
 
@@ -41,14 +41,30 @@
 
     .modalTitle {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 20%;
       background-color: rgba(white, 0.5);
+      .modalDescription {
+        font-size: 0.9rem;
+      }
     }
 
     .modalContent {
       height: 100%;
+      resize: none;
+    }
+
+    .modalSubmit {
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+    }
+    .off {
+      background-color: white;
+      opacity: 0.2;
+      cursor: default;
     }
   }
 }
