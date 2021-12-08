@@ -230,3 +230,11 @@ map을 통해 각 페이지에 연결, 구현
 * Modal Component 작업 중
   
 </details>
+
+<details>
+<summary>211207~211208</summary>
+  
+* Modal Component 작업 완료
+* 건의사항 및 버그 제보 기능 구현 중
+  
+</details>
