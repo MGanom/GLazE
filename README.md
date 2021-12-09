@@ -232,9 +232,26 @@ map을 통해 각 페이지에 연결, 구현
 </details>
 
 <details>
-<summary>211207~211208</summary>
+<summary>211207</summary>
+  
+* Modal Component 작업 중
+
+</details>
+
+<details>
+<summary>211208</summary>
   
 * Modal Component 작업 완료
 * 건의사항 및 버그 제보 기능 구현 중
-  
+
 </details>
+
+<details>
+<summary>211209</summary>
+  
+* 건의사항 및 버그 제보 기능 구현 완료
+* 게스트로 로그인 시 제보 기능 사용 불가하도록 구현
+* Main에 기능 관련하여 설명 추가
+
+</details>
+
