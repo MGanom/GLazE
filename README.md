@@ -5,8 +5,9 @@ GLazE는 Game Lazily & Easily의 약자로, 각종 게임에 관련된 유용한
 정보들을 빠르고 쉽게 접근할 수 있게 하기 위해 만들어졌습니다.
 
 ## 진행기간
-* 1차완성: 210802 ~ 210813
-* 디자인 및 코드 정리: 210816 ~
+* 1차 완성: 210802 ~ 210813
+* 디자인 및 코드 정리: 210816 ~ 210908
+* 기능 추가: 211203 ~
 
 ## 사용 기술
 HTML, CSS(SASS), JavaScript(Axios), React(CRA, React Router, Hooks)
@@ -32,6 +33,7 @@ Firebase, Cloudinary, Youtube API, Postman, Vercel
    * 각 카테고리로 넘어갈 수 있는 버튼들이 Router로 연결 돼 있다.
 * Footer
    * 제작자의 Github로 넘어갈 수 있는 링크가 있다.
+   * 개선사항 및 버그 제보를 할 수 있는 버튼이 있다. 유저 ID, 닉네임, 제보 사항이 Firebase에 저장되어 확인할 수 있다. 
 
 ### 3. 메인
 * 프로젝트 사이트에 관한 설명과 즐겨찾기 기능이 있다.
@@ -61,7 +63,7 @@ Firebase, Cloudinary, Youtube API, Postman, Vercel
    * 프로필 카드와 수정 창이 가로 정렬에서 세로 정렬로 변한다.
    * '관련 영상 보기' 항목의 정렬 방식이 바둑판 형식에서 횡스크롤 형식으로 변한다.
    * '관련 정보 사이트' 항목의 정렬 방식이 바둑판 형식에서 횡스크롤 형식으로 변한다.
-   * 요소들이 전부 %와 rem으로 이루어져 있기 때문에 media query를 통해 일괄적으로 사이즈 변경이 되도록 구현했다.
+   * 요소들을 전부 %, rem, em으로 구성하여 media query를 통해 일괄적으로 사이즈 변경이 되도록 구현했다.
 * Vercel로 배포 완료하였다.
 
 ## 진행상황
@@ -220,7 +222,6 @@ map을 통해 각 페이지에 연결, 구현
 * 잘못된 접근 시 alert를 출력하고, 메인화면으로 돌아가도록 구현
 * 프로필 이미지를 새 창에서 확인하는 기능 추가
 * Guest로 로그인 시 즐겨찾기 사용 불가 하다는 문구 추가
-  
 </details>
 
 <details>
@@ -228,14 +229,12 @@ map을 통해 각 페이지에 연결, 구현
   
 * Footer에 건의사항 및 버그 제보 버튼 추가 및 작업 중
 * Modal Component 작업 중
-  
 </details>
 
 <details>
 <summary>211207</summary>
   
 * Modal Component 작업 중
-
 </details>
 
 <details>
@@ -243,7 +242,6 @@ map을 통해 각 페이지에 연결, 구현
   
 * Modal Component 작업 완료
 * 건의사항 및 버그 제보 기능 구현 중
-
 </details>
 
 <details>
@@ -252,6 +250,5 @@ map을 통해 각 페이지에 연결, 구현
 * 건의사항 및 버그 제보 기능 구현 완료
 * 게스트로 로그인 시 제보 기능 사용 불가하도록 구현
 * Main에 기능 관련하여 설명 추가
-
 </details>
 
