@@ -19,9 +19,7 @@ const Footer = ({ database }) => {
         <div className="report">
           <Modal
             usage={"건의사항 및 버그 제보"}
-            description={
-              "최대한 상세하게 적어주시면 문제 해결에 큰 도움이 됩니다."
-            }
+            description={`상세하게 적어주시면 문제 해결에 큰 도움이 됩니다.`}
             database={database}
           />
         </div>
