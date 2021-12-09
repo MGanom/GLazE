@@ -68,17 +68,17 @@ class Database {
     return id;
   }
 
-  reporterNick(userId) {
+  reporterNick(userId, setNick) {
     const ref = firebaseDatabase.ref(`${userId}`);
     ref.on("value", (snapshot) => {
       if (snapshot.val()) {
-        return userId;
+        setNick(snapshot.val().info.name);
       }
     });
   }
 
-  saveReport(data) {
-    firebaseDatabase.ref("report").set(data);
+  saveReport(data, id) {
+    firebaseDatabase.ref(`report/${id}`).set(data);
   }
 }
 
