@@ -37,6 +37,24 @@
       }
       h2 {
         padding-top: 2.5rem;
+        .moreFunc {
+          position: relative;
+          color: blue;
+          border-bottom: 1px solid blue;
+
+          .moreFuncContent {
+            position: absolute;
+            left: -100%;
+            top: 150%;
+            width: max-content;
+            border: 1px solid black;
+            padding: 0.3em;
+            background-color: rgba(skyblue, 0.5);
+          }
+          .invisible {
+            display: none;
+          }
+        }
       }
     }
     .authList {

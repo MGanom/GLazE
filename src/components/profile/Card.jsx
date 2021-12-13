@@ -1,7 +1,9 @@
+import { useHistory } from "react-router-dom";
 import "./styles/Card.scss";
 
 const DEFAULT_IMAGE = "/images/guestIcon.svg";
 const Card = ({ profile }) => {
+  const history = useHistory();
   const { name, gender, email, message, imageURL } = profile;
   const url = imageURL || DEFAULT_IMAGE;
 
@@ -12,10 +14,12 @@ const Card = ({ profile }) => {
   return (
     <div className="profileCard">
       <img
-        className="profileImg"
+        className={
+          history?.location?.state?.isGuest ? "profileImg" : "profileImg click"
+        }
         src={url}
         alt="profileImg"
-        onClick={openImg}
+        onClick={history?.location?.state?.isGuest === true ? null : openImg}
       />
       <div className="profileInfo">
         <h1 className="profileName">{name}</h1>

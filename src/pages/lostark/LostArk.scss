@@ -19,6 +19,12 @@
     background-color: rgba(white, 0.5);
     box-shadow: $sub-shadow;
 
+    .listBlocker {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
     .youtubeSection {
       font-size: 1.5rem;
       border-bottom: 0.188rem solid $sub-mint-one;

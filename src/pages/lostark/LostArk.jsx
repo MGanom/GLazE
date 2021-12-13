@@ -32,6 +32,7 @@ const LostArk = ({ database, youtube, sites }) => {
   return (
     <main className="lostark">
       <section className="youtube">
+        {viewVideo ? <div className="listBlocker"></div> : null}
         <h1 className="youtubeSection">관련 영상 보기</h1>
         <VideoList videos={lostArk} onClick={clickVideo} />
         {viewVideo ? (

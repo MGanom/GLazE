@@ -32,6 +32,7 @@ const Poe = ({ database, youtube, sites }) => {
   return (
     <main className="poe">
       <section className="youtube">
+        {viewVideo ? <div className="listBlocker"></div> : null}
         <h1 className="youtubeSection">관련 영상 보기</h1>
         <VideoList videos={poe} onClick={clickVideo} />
         {viewVideo ? (
