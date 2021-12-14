@@ -152,7 +152,10 @@ const Main = ({ database }) => {
 
       <section className="bookmark">
         <div className="bookmarkHowto">
-          <h1 className="bookmarkHowtoTitle">건의사항 및 버그 제보</h1>
+          <h1 className="bookmarkHowtoTitle">
+            건의사항 및 버그 제보{" "}
+            {history.location.state.isGuest === true ? "(사용 불가)" : null}
+          </h1>
           <h2 className="bookmarkHowtoContent">
             사이트 우측 최하단의 건의사항 및 버그 제보 버튼을 눌러 사이트 개선에
             도움을 줄 수 있습니다.
@@ -162,7 +165,7 @@ const Main = ({ database }) => {
             <br />
             <br />
             <div style={{ color: "blue" }}>
-              ※ 게스트로 로그인 시 기능을 사용할 수 없습니다.
+              ※ 게스트로 로그인 시 제보 기능을 사용할 수 없습니다.
             </div>
           </h2>
         </div>

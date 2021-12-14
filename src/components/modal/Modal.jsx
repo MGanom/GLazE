@@ -15,6 +15,7 @@ const Modal = ({ database, usage, description }) => {
 
   const openModal = () => {
     setIsOpen(true);
+    document.querySelector("body").classList.add("noScroll");
   };
 
   const closeModal = (e) => {
@@ -24,9 +25,11 @@ const Modal = ({ database, usage, description }) => {
       } else {
         alert("접수되었습니다. 감사합니다.");
         sendReport(e);
+        document.querySelector("body").classList.remove("noScroll");
         setIsOpen(false);
       }
     } else {
+      document.querySelector("body").classList.remove("noScroll");
       setIsOpen(false);
     }
   };

@@ -20,7 +20,7 @@
   .modalContainer {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: 25%;
     left: 25%;
     width: 50%;
@@ -28,6 +28,11 @@
     background-color: rgba($sub-brown-two, 0.9);
     border: 3px solid rgba($main-mint, 1);
     box-shadow: $main-shadow;
+
+    @media (max-width: 768px) {
+      left: 12.5%;
+      width: 75%;
+    }
 
     .modalCloseBtn {
       align-self: flex-end;
@@ -70,10 +75,6 @@
       background-color: white;
       opacity: 0.2;
       cursor: default;
-    }
-    @media (max-width: 768px) {
-      left: 12.5%;
-      width: 75%;
     }
   }
 }

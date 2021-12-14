@@ -54,7 +54,7 @@ const Login = ({ auth }) => {
                 onMouseLeave={onMouseLeave}
               >
                 추가적인 기능
-                <div className="moreFuncContent" ref={moreInfoRef}>
+                <div className="invisible" ref={moreInfoRef}>
                   프로필 설정, 즐겨찾기, 건의사항 및 버그 제보
                 </div>
               </span>
