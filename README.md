@@ -270,5 +270,5 @@ map을 통해 각 페이지에 연결, 구현
 <details>
 <summary>211215</summary>
   
-* 방명록 기능 구현 
+* 방명록 기능 구현 중
 </details>
