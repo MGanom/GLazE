@@ -80,6 +80,22 @@ class Database {
   saveReport(data, id) {
     firebaseDatabase.ref(`report/${id}`).set(data);
   }
+
+  syncGuestBook(onUpdate) {
+    const ref = firebaseDatabase.ref("guestbook");
+    ref.on("value", (snapshot) => {
+      snapshot.val() && onUpdate(snapshot.val());
+    });
+    return () => ref.off();
+  }
+
+  saveGuestBook(userId, data) {
+    firebaseDatabase.ref(`${userId}/bookmark/${data.id}`).set(data);
+  }
+
+  removeGuestBook(userId, id) {
+    firebaseDatabase.ref(`${userId}/bookmark/${id}`).remove();
+  }
 }
 
 export default Database;
