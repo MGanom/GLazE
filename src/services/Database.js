@@ -89,12 +89,26 @@ class Database {
     return () => ref.off();
   }
 
-  saveGuestBook(userId, data) {
-    firebaseDatabase.ref(`${userId}/bookmark/${data.id}`).set(data);
+  signId() {
+    const ref = firebaseDatabase.ref(`guestbook`);
+    let id = 0;
+    ref.on("value", (snapshot) => {
+      if (snapshot.val()) {
+        id = snapshot.val()[snapshot.val().length - 1].id + 1;
+      } else {
+        id = 1;
+      }
+    });
+    return id;
   }
 
-  removeGuestBook(userId, id) {
-    firebaseDatabase.ref(`${userId}/bookmark/${id}`).remove();
+  saveSign(id, data) {
+    firebaseDatabase.ref(`guestbook/${id}`).set(data);
+    firebaseDatabase.ref(`guestbookDB/${id}`).set(data);
+  }
+
+  removeSign(userId, id) {
+    firebaseDatabase.ref(`guestbook`).remove();
   }
 }
 
