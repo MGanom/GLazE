@@ -1,0 +1,27 @@
+@import "../../../styles/Colors.scss";
+
+.guestBookSwitch {
+}
+.guestBookBackground {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.8;
+}
+.guestBookContainer {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 2;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  background-color: rgba($sub-brown-two, 0.9);
+  border: 3px solid rgba($main-mint, 1);
+  box-shadow: $main-shadow;
+}

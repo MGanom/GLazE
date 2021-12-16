@@ -9,7 +9,6 @@ const Header = ({ auth, database, imageUploader }) => {
   const historyState = history?.location?.state;
   const [userId, setUserId] = useState(historyState && historyState.id);
   const [select, setSelect] = useState("");
-  const [guestBook, setGuestBook] = useState(false);
 
   const onLogout = useCallback(() => {
     auth.logout();
@@ -44,9 +43,8 @@ const Header = ({ auth, database, imageUploader }) => {
   return (
     <header className="header">
       <div id="main" className="title">
-        <div className="guestBookBtn" onClick={() => setGuestBook(true)}>
-          방명록
-          {guestBook ? <GuestBook database={database} /> : null}
+        <div className="guestBook">
+          <GuestBook database={database} />
         </div>
         <img
           src="/images/glazeTitle.png"
