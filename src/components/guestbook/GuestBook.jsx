@@ -19,15 +19,17 @@ const GuestBook = ({ database }) => {
 
   const closeGuestBook = () => {
     document.querySelector("body").classList.remove("noScroll");
-    setIsOpen(false);
+    if (onWrite !== true) {
+      setIsOpen(false);
+    }
   };
 
   useEffect(() => {
     database.syncGuestBook(setSignData);
   }, [database]);
 
-  const writeSign = (e) => {
-    setOnWrite(true);
+  const toggleWrite = (e) => {
+    setOnWrite(!onWrite);
   };
 
   return (
@@ -43,21 +45,36 @@ const GuestBook = ({ database }) => {
               닫기
             </div>
             <div className="guestBookTitle">방명록</div>
-            {signData.map((sign) => {
-              return (
-                <SignList
-                  key={sign.id}
-                  number={sign.id}
-                  nickname={sign.nickname}
-                  title={sign.title}
-                />
-              );
-            })}
-            <button className="signCreateBtn" onClick={writeSign}>
+            <div className="signListContainer">
+              {signData.map((sign) => {
+                return (
+                  <SignList
+                    key={sign.id}
+                    number={sign.id}
+                    nickname={sign.nickname}
+                    title={sign.title}
+                    content={sign.content}
+                    date={sign.date}
+                    time={sign.time}
+                  />
+                );
+              })}
+            </div>
+            <button className="signCreateBtn" onClick={toggleWrite}>
               작성하기
             </button>
-            <button onClick={console.log(signData)}>임시체크</button>
-            {onWrite ? <SignForm database={database} user={user} /> : null}
+            {onWrite ? (
+              <>
+                <div className="signFormBackground"></div>
+                <div className="signFormContainer">
+                  <SignForm
+                    database={database}
+                    user={user}
+                    toggleWrite={toggleWrite}
+                  />
+                </div>
+              </>
+            ) : null}
           </div>
         </>
       ) : null}

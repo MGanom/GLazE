@@ -3,4 +3,22 @@
   width: 100%;
   justify-content: space-around;
   align-items: center;
+  height: 10%;
+  font-size: 1.1rem;
+
+  .signNumber {
+    width: 10%;
+  }
+
+  .signName {
+    width: 30%;
+  }
+
+  .signTitle {
+    width: 40%;
+  }
+
+  .signDate {
+    width: 20%;
+  }
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SignRead from "./SignRead";
 import "./styles/SignList.scss";
 
-const SignList = ({ number, nickname, title }) => {
+const SignList = ({ number, nickname, title, content, date, time }) => {
   const [onRead, setOnRead] = useState(false);
 
   const readSign = () => {
@@ -16,7 +16,17 @@ const SignList = ({ number, nickname, title }) => {
       <div className="signTitle" onClick={readSign}>
         {title}
       </div>
-      {onRead ? <SignRead /> : null}
+      <div className="signDate">{date}</div>
+      {onRead ? (
+        <SignRead
+          number={number}
+          nickname={nickname}
+          title={title}
+          content={content}
+          date={date}
+          time={time}
+        />
+      ) : null}
     </div>
   );
 };

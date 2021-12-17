@@ -55,26 +55,28 @@ class Database {
     firebaseDatabase.ref(`${userId}/bookmark/${id}`).remove();
   }
 
-  reportId() {
-    const ref = firebaseDatabase.ref(`report`);
-    let id = 0;
-    ref.on("value", (snapshot) => {
-      if (snapshot.val()) {
-        id = Object.keys(snapshot.val()).length + 1;
-      } else {
-        id = 1;
-      }
-    });
-    return id;
-  }
-
-  reporterNick(userId, setNick) {
+  getNickname(userId, setNick) {
     const ref = firebaseDatabase.ref(`${userId}`);
     ref.on("value", (snapshot) => {
       if (snapshot.val()) {
         setNick(snapshot.val().info.name);
       }
     });
+  }
+
+  getId(onUpdate, from) {
+    const ref = firebaseDatabase.ref(`${from}`);
+    let id = 0;
+    ref.on("value", (snapshot) => {
+      if (snapshot.val()) {
+        id = snapshot.val().length;
+        onUpdate(id);
+      } else {
+        id = 1;
+        onUpdate(id);
+      }
+    });
+    return id;
   }
 
   saveReport(data, id) {
@@ -87,19 +89,6 @@ class Database {
       snapshot.val() && onUpdate(snapshot.val());
     });
     return () => ref.off();
-  }
-
-  signId() {
-    const ref = firebaseDatabase.ref(`guestbook`);
-    let id = 0;
-    ref.on("value", (snapshot) => {
-      if (snapshot.val()) {
-        id = snapshot.val()[snapshot.val().length - 1].id + 1;
-      } else {
-        id = 1;
-      }
-    });
-    return id;
   }
 
   saveSign(id, data) {
