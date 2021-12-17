@@ -270,7 +270,15 @@ map을 통해 각 페이지에 연결, 구현
 <details>
 <summary>211215~211216</summary>
   
-* 방명록 기능 구현 중
+* 방명록 컴포넌트 추가
+* 방명록 목록 구현 중
 </details>
 
+<details>
+<summary>211217</summary>
+  
+* 방명록 목록 추가
+* 방명록 쓰기 기능 추가
+* 방명록 읽기 기능 구현 중
+</details>
 
