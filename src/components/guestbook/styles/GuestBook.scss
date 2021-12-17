@@ -1,27 +1,68 @@
 @import "../../../styles/Colors.scss";
 
-.guestBookSwitch {
-}
-.guestBookBackground {
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0.8;
-}
-.guestBookContainer {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  z-index: 2;
-  top: 25%;
-  left: 25%;
-  width: 50%;
-  height: 50%;
-  background-color: rgba($sub-brown-two, 0.9);
-  border: 3px solid rgba($main-mint, 1);
-  box-shadow: $main-shadow;
+.guestBook {
+  position: relative;
+
+  .guestBookSwitch {
+  }
+  .guestBookBackground {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+  }
+  .guestBookContainer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 2;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background-color: rgba($sub-brown-two, 0.9);
+    border: 3px solid rgba($main-mint, 1);
+    box-shadow: $main-shadow;
+
+    .guestBookCloseBtn {
+      align-self: flex-end;
+      font-size: 1.3rem;
+    }
+    .guestBookCloseBtn:hover {
+      color: rgba(0, 0, 0, 0.5);
+      text-shadow: 0 0 0.063rem $main-mint;
+      cursor: pointer;
+    }
+
+    .guestBookTitle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10%;
+      font-size: 1.5rem;
+      background-color: rgba(white, 0.5);
+      .modalDescription {
+        font-size: 1rem;
+      }
+    }
+
+    .signListContainer {
+      width: 100%;
+      height: 100%;
+    }
+
+    .signFormContainer {
+      position: absolute;
+      bottom: 25%;
+      width: 100%;
+      height: 50%;
+      background-color: rgba($sub-brown-two, 1);
+      border: 3px solid rgba($main-mint, 1);
+      box-shadow: $main-shadow;
+    }
+  }
 }

@@ -7,6 +7,7 @@ const Modal = ({ database, usage, description }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [length, setLength] = useState(0);
   const [nickname, setNickname] = useState("");
+  const [reportId, setReportId] = useState(0);
   const textareaRef = useRef();
 
   const textCount = () => {
@@ -35,13 +36,17 @@ const Modal = ({ database, usage, description }) => {
   };
 
   useEffect(() => {
-    database.reporterNick(history?.location?.state?.id, setNickname);
+    database.getNickname(history?.location?.state?.id, setNickname);
   }, [database, history?.location?.state?.id, setNickname]);
+
+  useEffect(() => {
+    database.getId(setReportId, "report");
+  }, [database]);
 
   const sendReport = (e) => {
     e.preventDefault();
     const report = {
-      id: database.reportId(),
+      id: reportId,
       reporterId: history?.location?.state?.id,
       nickname: nickname,
       content: textareaRef.current.value,
