@@ -10,43 +10,67 @@
   box-shadow: 0 0 0.625rem 0.313rem black;
   opacity: 0.8;
 }
+
 .signForm {
   display: flex;
   width: 100%;
   height: 100%;
   flex-direction: column;
 
-  .signFromCancelBtn {
-    align-self: flex-start;
+  .signFormCancelBtn {
+    display: flex;
+    align-items: center;
     font-size: 1.3rem;
-  }
-
-  .signFromCancelBtn:hover {
-    color: rgba(0, 0, 0, 0.5);
-    text-shadow: 0 0 0.063rem $main-mint;
+    width: fit-content;
+    height: 8%;
+    padding: 0.5rem;
     cursor: pointer;
   }
 
-  .signFromDesc {
+  .signFormCancelBtn:hover {
+    color: rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 0.063rem $main-mint;
+  }
+
+  .signFormDesc {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 20%;
+    height: 18%;
     font-size: 1.5rem;
     background-color: rgba(white, 0.5);
     .modalDescription {
       font-size: 1rem;
     }
   }
+
   .signFormTitle {
     height: 15%;
     font-size: 1.1rem;
   }
-  .signFormContent {
-    height: 50%;
-    font-size: 1.1rem;
+
+  .signFormTitle:focus,
+  .signFormContent:focus {
+    outline: 0;
   }
+
+  .signFormContent {
+    height: 49%;
+    font-size: 1.1rem;
+    resize: none;
+  }
+
   .signFormSubmit {
-    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .signFormSubmit:hover {
+    color: rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 0.063rem $main-mint;
   }
 }

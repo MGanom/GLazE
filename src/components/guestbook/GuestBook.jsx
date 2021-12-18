@@ -7,8 +7,8 @@ import "./styles/GuestBook.scss";
 
 const GuestBook = ({ database }) => {
   const history = useHistory();
-  const user = history?.location?.state?.id;
-  const [signData, setSignData] = useState([]);
+  const state = history?.location?.state;
+  const [signData, setSignData] = useState({});
   const [onWrite, setOnWrite] = useState(false);
   const [isOpen, setIsOpen] = useState();
 
@@ -18,8 +18,8 @@ const GuestBook = ({ database }) => {
   };
 
   const closeGuestBook = () => {
-    document.querySelector("body").classList.remove("noScroll");
     if (onWrite !== true) {
+      document.querySelector("body").classList.remove("noScroll");
       setIsOpen(false);
     }
   };
@@ -28,15 +28,15 @@ const GuestBook = ({ database }) => {
     database.syncGuestBook(setSignData);
   }, [database]);
 
-  const toggleWrite = (e) => {
+  const toggleWrite = () => {
     setOnWrite(!onWrite);
   };
 
   return (
     <div className="guestBook">
-      <button className="guestBookSwtich" onClick={openGuestBook}>
+      <div className="guestBookSwitch" onClick={openGuestBook}>
         방명록
-      </button>
+      </div>
       {isOpen ? (
         <>
           <div className="guestBookBackground" onClick={closeGuestBook}></div>
@@ -46,30 +46,35 @@ const GuestBook = ({ database }) => {
             </div>
             <div className="guestBookTitle">방명록</div>
             <div className="signListContainer">
-              {signData.map((sign) => {
+              {Object.keys(signData).map((key, idx) => {
                 return (
                   <SignList
-                    key={sign.id}
-                    number={sign.id}
-                    nickname={sign.nickname}
-                    title={sign.title}
-                    content={sign.content}
-                    date={sign.date}
-                    time={sign.time}
+                    database={database}
+                    user={state.id}
+                    key={idx}
+                    number={signData[key].id}
+                    nickname={signData[key].nickname}
+                    title={signData[key].title}
+                    content={signData[key].content}
+                    date={signData[key].date}
+                    time={signData[key].time}
                   />
                 );
               })}
             </div>
-            <button className="signCreateBtn" onClick={toggleWrite}>
+            <div
+              className={state.isGuest ? "signCreateBtn off" : "signCreateBtn"}
+              onClick={state.isGuest ? null : toggleWrite}
+            >
               작성하기
-            </button>
+            </div>
             {onWrite ? (
               <>
                 <div className="signFormBackground"></div>
                 <div className="signFormContainer">
                   <SignForm
                     database={database}
-                    user={user}
+                    user={state.id}
                     toggleWrite={toggleWrite}
                   />
                 </div>

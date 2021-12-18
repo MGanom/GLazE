@@ -87,6 +87,7 @@ class Database {
     const ref = firebaseDatabase.ref("guestbook");
     ref.on("value", (snapshot) => {
       snapshot.val() && onUpdate(snapshot.val());
+      !snapshot.val() && onUpdate({});
     });
     return () => ref.off();
   }
@@ -96,8 +97,21 @@ class Database {
     firebaseDatabase.ref(`guestbookDB/${id}`).set(data);
   }
 
-  removeSign(userId, id) {
-    firebaseDatabase.ref(`guestbook`).remove();
+  removeSign(signId, userId, toggle) {
+    const ref = firebaseDatabase.ref(`guestbook/${signId}`);
+    ref.once("value", (snapshot) => {
+      if (snapshot.val()) {
+        if (snapshot.val().signId === userId) {
+          if (window.confirm("정말 삭제하시겠습니까?")) {
+            alert("삭제되었습니다.");
+            toggle();
+            ref.remove();
+          }
+        } else {
+          alert("작성자만 삭제할 수 있습니다.");
+        }
+      }
+    });
   }
 }
 

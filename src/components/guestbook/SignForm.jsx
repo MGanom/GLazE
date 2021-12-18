@@ -45,7 +45,7 @@ const SignForm = ({ database, user, toggleWrite }) => {
     };
     if (sign.title.length < 3) {
       alert("제목을 3자 이상 적어주세요.");
-    } else if (sign.content < 5) {
+    } else if (sign.content.length < 5) {
       alert("내용을 5자 이상 적어주세요.");
     } else {
       database.saveSign(signId, sign);
@@ -63,19 +63,19 @@ const SignForm = ({ database, user, toggleWrite }) => {
 
   return (
     <div className="signForm">
-      <div className="signFromCancelBtn" onClick={toggleWrite}>
+      <div className="signFormCancelBtn" onClick={toggleWrite}>
         돌아가기
       </div>
-      <div className="signFromDesc">방명록 작성</div>
+      <div className="signFormDesc">방명록 작성</div>
       <input className="signFormTitle" ref={titleRef} placeholder="제목" />
       <textarea
         className="signFormContent"
         ref={contentRef}
         placeholder="내용"
       />
-      <button className="signFormSubmit" onClick={signSubmit}>
+      <div className="signFormSubmit" onClick={signSubmit}>
         작성완료
-      </button>
+      </div>
     </div>
   );
 };
