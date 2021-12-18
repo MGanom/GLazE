@@ -43,9 +43,7 @@ const Header = ({ auth, database, imageUploader }) => {
   return (
     <header className="header">
       <div id="main" className="title">
-        <div className="guestBook">
-          <GuestBook database={database} />
-        </div>
+        <GuestBook database={database} />
         <img
           src="/images/glazeTitle.png"
           className="titleImg"

@@ -1,10 +1,29 @@
 @import "../../../styles/Colors.scss";
 
 .guestBook {
-  position: relative;
+  position: absolute;
+  bottom: -20%;
+  left: 2%;
+  // width: fit-content;
+  padding: 0.5rem;
+
+  background-color: rgba($main-brown, 0.95);
+  border: 0.188rem solid rgba($main-mint, 1);
+  box-shadow: $main-shadow;
 
   .guestBookSwitch {
+    font-size: 1.6rem;
+    cursor: pointer;
+    @media (max-width: 425px) {
+      font-size: 1.3rem;
+    }
   }
+  .guestBookSwitch:hover {
+    color: rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 0.063rem $main-mint;
+    transform: scale(1.05);
+  }
+
   .guestBookBackground {
     position: fixed;
     z-index: 1;
@@ -28,21 +47,31 @@
     border: 3px solid rgba($main-mint, 1);
     box-shadow: $main-shadow;
 
+    @media (max-width: 768px) {
+      left: 12.5%;
+      width: 75%;
+    }
+
     .guestBookCloseBtn {
-      align-self: flex-end;
-      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      place-self: flex-end;
+      font-size: 1.4rem;
+      width: fit-content;
+      height: 8%;
+      padding: 0.5rem;
+      cursor: pointer;
     }
     .guestBookCloseBtn:hover {
       color: rgba(0, 0, 0, 0.5);
       text-shadow: 0 0 0.063rem $main-mint;
-      cursor: pointer;
     }
 
     .guestBookTitle {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 10%;
+      height: 12%;
       font-size: 1.5rem;
       background-color: rgba(white, 0.5);
       .modalDescription {
@@ -52,14 +81,38 @@
 
     .signListContainer {
       width: 100%;
-      height: 100%;
+      height: 77%;
+      overflow-y: auto;
+      padding: 0.3rem;
+    }
+
+    .signCreateBtn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 8%;
+      font-size: 1.2rem;
+      background-color: rgba($sub-brown-one, 1);
+      cursor: pointer;
+    }
+
+    .signCreateBtn:hover {
+      color: rgba(0, 0, 0, 0.5);
+      text-shadow: 0 0 0.063rem $main-mint;
+    }
+
+    .off {
+      background-color: white;
+      opacity: 0.2;
+      cursor: default;
     }
 
     .signFormContainer {
       position: absolute;
-      bottom: 25%;
-      width: 100%;
-      height: 50%;
+      bottom: 7.5%;
+      left: 12.5%;
+      width: 75%;
+      height: 85%;
       background-color: rgba($sub-brown-two, 1);
       border: 3px solid rgba($main-mint, 1);
       box-shadow: $main-shadow;

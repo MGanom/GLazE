@@ -8,7 +8,7 @@
   }
 
   .modalBackground {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -59,7 +59,7 @@
 
     .modalContent {
       height: 100%;
-      font-size: 0.9em;
+      font-size: 1rem;
       resize: none;
     }
     .modalContent:focus {

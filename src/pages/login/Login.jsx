@@ -5,6 +5,7 @@ import "./Login.scss";
 const Login = ({ auth }) => {
   const history = useHistory();
   const moreInfoRef = useRef();
+
   const goToMain = useCallback(
     (userId, isGuest) => {
       history.push({

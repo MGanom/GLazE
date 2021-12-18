@@ -1,0 +1,91 @@
+@import "../../../styles/Colors.scss";
+
+.signReadBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+}
+.signReadContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 7.5%;
+  left: 12.5%;
+  width: 75%;
+  height: 85%;
+  background-color: rgba($sub-brown-two, 1);
+  border: 3px solid rgba($main-mint, 1);
+  box-shadow: $main-shadow;
+
+  .readCancelBtn {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 8%;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  .readCancelBtn:hover {
+    color: rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 0.063rem $main-mint;
+  }
+
+  .readInfo {
+    display: flex;
+    align-items: center;
+    height: 8%;
+    padding: 0.3rem;
+    background-color: rgba(white, 0.5);
+
+    .readNumber {
+      width: 10%;
+      font-size: 1rem;
+    }
+    .readNickname {
+      width: 45%;
+      font-size: 1rem;
+    }
+    .readDate {
+      width: 45%;
+      font-size: 1rem;
+    }
+  }
+
+  .readTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 17%;
+    font-size: 1.3rem;
+    padding: 0.5rem;
+  }
+
+  .readContent {
+    display: flex;
+    text-align: left;
+    height: 60%;
+    background-color: rgba(white, 0.5);
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    overflow: auto;
+  }
+
+  .signDeleteBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7%;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .signDeleteBtn:hover {
+    color: rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 0.063rem $main-mint;
+  }
+}
