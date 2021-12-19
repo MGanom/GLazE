@@ -84,7 +84,7 @@ class Database {
   }
 
   syncGuestBook(onUpdate) {
-    const ref = firebaseDatabase.ref("guestbook");
+    const ref = firebaseDatabase.ref(`guestbook`);
     ref.on("value", (snapshot) => {
       snapshot.val() && onUpdate(snapshot.val());
       !snapshot.val() && onUpdate({});
