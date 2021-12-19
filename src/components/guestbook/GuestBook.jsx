@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { useEffect } from "react/cjs/react.development";
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import SignForm from "./SignForm";
 import SignList from "./SignList";
 import "./styles/GuestBook.scss";
