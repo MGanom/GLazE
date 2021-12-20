@@ -282,9 +282,15 @@ map을 통해 각 페이지에 연결, 구현
 * 방명록 읽기 기능 구현 중
 </details>
 
+<details>
 <summary>211218</summary>
   
 * 방명록 기능 추가 완료
 * 디자인 
 </details>
 
+<details>
+<summary>211219~211220</summary>
+  
+* import 오류로 인한 버그 수정
+</details>
