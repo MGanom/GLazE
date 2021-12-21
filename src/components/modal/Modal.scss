@@ -34,6 +34,17 @@
       width: 75%;
     }
 
+    animation-duration: 0.2s;
+    animation-name: zoomin;
+    @keyframes zoomin {
+      from {
+        transform: scale(0.5);
+      }
+      to {
+        transfrom: scale(1);
+      }
+    }
+
     .modalCloseBtn {
       align-self: flex-end;
       font-size: 1.3rem;

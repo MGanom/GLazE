@@ -15,6 +15,17 @@
     width: 100%;
     height: 100%;
   }
+
+  animation-duration: 0.2s;
+  animation-name: zoomin;
+  @keyframes zoomin {
+    from {
+      transform: scale(0.5);
+    }
+    to {
+      transfrom: scale(1);
+    }
+  }
 }
 
 .videoCloseBtn {

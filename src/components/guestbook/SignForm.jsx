@@ -6,6 +6,15 @@ const SignForm = ({ database, user, toggleWrite }) => {
   const titleRef = useRef();
   const [nickname, setNickname] = useState("");
   const [signId, setSignId] = useState(0);
+  const [titleLength, setTitleLength] = useState(0);
+  const [contentLength, setContentLength] = useState(0);
+
+  const titleCount = () => {
+    setTitleLength(titleRef.current.value.length);
+  };
+  const contentCount = () => {
+    setContentLength(contentRef.current.value.length);
+  };
 
   const signSubmit = (e) => {
     e.preventDefault();
@@ -66,13 +75,26 @@ const SignForm = ({ database, user, toggleWrite }) => {
         돌아가기
       </div>
       <div className="signFormDesc">방명록 작성</div>
-      <input className="signFormTitle" ref={titleRef} placeholder="제목" />
+      <input
+        className="signFormTitle"
+        onChange={titleCount}
+        ref={titleRef}
+        placeholder="제목을 3자 이상 적어주세요."
+      />
       <textarea
         className="signFormContent"
+        onChange={contentCount}
         ref={contentRef}
-        placeholder="내용"
+        placeholder="내용을 5자 이상 적어주세요."
       />
-      <div className="signFormSubmit" onClick={signSubmit}>
+      <div
+        className={
+          titleLength < 3 || contentLength < 5
+            ? "signFormSubmit off"
+            : "signFormSubmit"
+        }
+        onClick={signSubmit}
+      >
         작성완료
       </div>
     </div>
