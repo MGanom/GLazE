@@ -21,6 +21,7 @@ Firebase, Cloudinary, Youtube API, Postman, Vercel
 * History API를 활용하여 로그인 정보와 게스트 여부 정보를 메인으로 넘기게 된다.
 * 브라우저에 로그인 기록이 남아있다면 다시 로그인하지 않아도 자동으로 로그인 되어 메인으로 넘어가게 된다.
 * 만약 로그인을 하지 않은 상태로 다른 페이지에 접근을 시도하게 되면 로그인 화면으로 돌아와지게 된다.
+* 로그인 실패 시 실패 메시지가 나온다.
 
 ### 2. Header & Footer
 
@@ -31,6 +32,9 @@ Firebase, Cloudinary, Youtube API, Postman, Vercel
    * 프로필 카드의 이미지는 Cloudinary에 저장되어 업로드 및 출력이 이루어 진다.
    * 로그아웃 버튼을 눌러 로그인 화면으로 돌아갈 수 있다.
    * 각 카테고리로 넘어갈 수 있는 버튼들이 Router로 연결 돼 있다.
+   * 방명록을 남길 수 있는 버튼이 있으며, 로그인 시에만 사용 가능하다. 이는 모든 유저가 읽을 수 있다.
+   * 방명록의 항목이 삭제되더라도 넘버링이 이어지도록 구현하였다.
+
 * Footer
    * 제작자의 Github로 넘어갈 수 있는 링크가 있다.
    * 개선사항 및 버그 제보를 할 수 있는 버튼이 있다. 유저 ID, 닉네임, 제보 사항이 Firebase에 저장되어 확인할 수 있다. 
@@ -65,8 +69,13 @@ Firebase, Cloudinary, Youtube API, Postman, Vercel
    * '관련 정보 사이트' 항목의 정렬 방식이 바둑판 형식에서 횡스크롤 형식으로 변한다.
    * 요소들을 전부 %, rem, em으로 구성하여 media query를 통해 일괄적으로 사이즈 변경이 되도록 구현했다.
 * Vercel로 배포 완료하였다.
+* CSS로 라이브러리 없이 커스텀 애니메이션을 구현하였다.
 
 ## 진행상황
+
+<details>
+<summary>1차 완성(210802 ~ 210813)</summary>
+<br />
 <details>
 <summary>210802</summary>
   
@@ -144,7 +153,7 @@ map을 통해 각 페이지에 연결, 구현
 * 모든 페이지 디자인 개편  
 * CSS의 폰트 및 여러 부분에 대해 px을 em 혹은 rem으로 수정 
 </details>
-
+  
 <details>
 <summary>210813</summary>
 
@@ -155,6 +164,13 @@ map을 통해 각 페이지에 연결, 구현
 * 기타 CSS  
 </details>
 
+</details>
+
+<br />
+
+<details>
+<summary>디자인 및 코드 정리(210816 ~ 210908)</summary>
+<br />
 <details>
 <summary>210816~210823</summary>
 
@@ -216,6 +232,13 @@ map을 통해 각 페이지에 연결, 구현
 * Main의 즐겨찾기 기능 설명 내용 추가
 </details>
 
+</details>
+
+<br />
+
+<details>
+<summary>기능 추가 및 추가 디자인(211203 ~)</summary>
+<br/>
 <details>
 <summary>211203</summary>
   
@@ -293,4 +316,13 @@ map을 통해 각 페이지에 연결, 구현
 <summary>211219~211220</summary>
   
 * import 오류로 인한 버그 수정
+</details>
+
+<details>
+<summary>211221</summary>
+  
+* 로그인 페이지, 방명록, 유튜브 플레이어, 건의사항 제보 기능 등에 애니메이션 추가
+* 로그인 시도 중이나 유튜브 영상 시청 중과 같은 특정 상황에서 오류를 일으킬 만한 상호 작용이 비활성화 되도록 구현
+</details>
+
 </details>
