@@ -1,10 +1,11 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Login.scss";
 
 const Login = ({ auth }) => {
   const history = useHistory();
   const moreInfoRef = useRef();
+  const [whileLogin, setWhileLogin] = useState(false);
 
   const goToMain = useCallback(
     (userId, isGuest) => {
@@ -19,18 +20,23 @@ const Login = ({ auth }) => {
   const onLogin = (e) => {
     auth
       .login(e.target.alt) //
-      .then((data) => goToMain(data.user.uid));
+      .then(setWhileLogin(true))
+      .then((data) => goToMain(data.user.uid))
+      .catch(() => {
+        alert("로그인에 실패했습니다. 다시 시도해주세요.");
+        setWhileLogin(false);
+      });
   };
 
   const onGuestLogin = () => {
-    auth.guestLogin(); //
+    auth.guestLogin().then(setWhileLogin(true)); //
   };
 
-  const onMouseOver = (e) => {
+  const onMouseOver = () => {
     moreInfoRef.current.className = "moreFuncContent";
   };
 
-  const onMouseLeave = (e) => {
+  const onMouseLeave = () => {
     moreInfoRef.current.className = "invisible";
   };
 
@@ -45,6 +51,19 @@ const Login = ({ auth }) => {
       <div className="loginBackground" />
       <main className="login">
         <section className="loginContainer">
+          <div className={whileLogin ? "loginBlocker" : "loginBlocker off"}>
+            <div className="blockerContent">
+              <div className="contentLetter">로</div>
+              <div className="contentLetter">그</div>
+              <div className="contentLetter">인&nbsp;</div>
+              <div className="contentLetter">진</div>
+              <div className="contentLetter">행&nbsp;</div>
+              <div className="contentLetter">중</div>
+              <div className="contentLetter">.</div>
+              <div className="contentLetter">.</div>
+              <div className="contentLetter">.</div>
+            </div>
+          </div>
           <div className="loginDescription">
             <h1>이용을 위해 로그인하거나 게스트로 진행하세요.</h1>
             <h2>
@@ -56,7 +75,7 @@ const Login = ({ auth }) => {
               >
                 추가적인 기능
                 <div className="invisible" ref={moreInfoRef}>
-                  프로필 설정, 즐겨찾기, 건의사항 및 버그 제보
+                  프로필 설정, 즐겨찾기, 건의사항 및 버그 제보, 방명록
                 </div>
               </span>
               을 사용할 수 있습니다.

@@ -1,3 +1,5 @@
+@import "../../styles/Colors.scss";
+
 .loginBackground {
   position: fixed;
   left: 0;
@@ -17,6 +19,7 @@
   justify-content: center;
 
   .loginContainer {
+    position: relative;
     width: 768px;
     height: 432px;
     display: flex;
@@ -27,6 +30,66 @@
     background-color: rgba(255, 255, 255, 0.7);
     @media (max-width: 768px) {
       width: 90%;
+    }
+
+    .loginBlocker {
+      position: absolute;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($main-brown, 0.9);
+      .blockerContent {
+        display: flex;
+        font-size: 3rem;
+
+        .contentLetter {
+          animation-duration: 1.25s;
+          animation-name: wave;
+          animation-iteration-count: infinite;
+          @keyframes wave {
+            0% {
+              transform: translateY(0rem);
+            }
+            50% {
+              transform: translateY(-1.25rem);
+            }
+            100% {
+              transform: translateY(0rem);
+            }
+          }
+        }
+        .contentLetter:nth-child(2) {
+          animation-delay: 0.1s;
+        }
+        .contentLetter:nth-child(3) {
+          animation-delay: 0.2s;
+        }
+        .contentLetter:nth-child(4) {
+          animation-delay: 0.3s;
+        }
+        .contentLetter:nth-child(5) {
+          animation-delay: 0.4s;
+        }
+        .contentLetter:nth-child(6) {
+          animation-delay: 0.5s;
+        }
+        .contentLetter:nth-child(7) {
+          animation-delay: 0.6s;
+        }
+        .contentLetter:nth-child(8) {
+          animation-delay: 0.7s;
+        }
+        .contentLetter:nth-child(9) {
+          animation-delay: 0.8s;
+        }
+      }
+    }
+
+    .off {
+      display: none;
     }
 
     .loginDescription {
@@ -82,6 +145,11 @@
             width: 100%;
           }
         }
+      }
+      li:hover {
+        transform: scale(1.1);
+        transition: ease-in 50ms;
+        filter: drop-shadow(0 0 1rem $main-mint);
       }
     }
   }
