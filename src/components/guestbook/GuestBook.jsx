@@ -49,6 +49,7 @@ const GuestBook = ({ database }) => {
                 return (
                   <SignList
                     database={database}
+                    state={state}
                     user={state.id}
                     key={idx}
                     number={signData[key].id}

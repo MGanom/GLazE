@@ -1,8 +1,10 @@
 import React, { useRef } from "react";
+import LikeButton from "../likebutton/LikeButton";
 import "./styles/SignRead.scss";
 
 const SignRead = ({
   database,
+  state,
   user,
   number,
   nickname,
@@ -37,8 +39,19 @@ const SignRead = ({
         </div>
         <div className="readTitle">{title}</div>
         <div className="readContent">{content}</div>
-        <div className="signDeleteBtn" onClick={deleteSign}>
-          삭제
+        <div className="funcContainer">
+          <div className="readLikeBtn">
+            <LikeButton
+              database={database}
+              state={state}
+              user={user}
+              number={number}
+              nickname={nickname}
+            />
+          </div>
+          <div className="signDeleteBtn" onClick={deleteSign}>
+            삭제
+          </div>
         </div>
       </div>
     </>

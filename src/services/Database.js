@@ -113,6 +113,32 @@ class Database {
       }
     });
   }
+
+  syncLikeCount(usage, onUpdate) {
+    const ref = firebaseDatabase.ref(`${usage}/likelist`);
+    ref.on("value", (snapshot) => {
+      snapshot.val() && onUpdate(Object.keys(snapshot.val()).length);
+    });
+  }
+
+  addLikeCount(usage, userId, data) {
+    firebaseDatabase.ref(`${usage}/likelist/${userId}`).set(data);
+  }
+
+  subLikeCount(usage, userId) {
+    firebaseDatabase.ref(`${usage}/likelist/${userId}`).remove();
+  }
+
+  checkIsLiked(usage, userId, onCheck) {
+    const ref = firebaseDatabase.ref(`${usage}/likelist/${userId}`);
+    ref.on("value", (snapshot) => {
+      if (snapshot.val()) {
+        onCheck(true);
+      } else {
+        onCheck(false);
+      }
+    });
+  }
 }
 
 export default Database;
