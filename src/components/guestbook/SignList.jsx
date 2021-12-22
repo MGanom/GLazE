@@ -4,6 +4,7 @@ import "./styles/SignList.scss";
 
 const SignList = ({
   database,
+  state,
   user,
   number,
   nickname,
@@ -29,6 +30,7 @@ const SignList = ({
       {onRead ? (
         <SignRead
           database={database}
+          state={state}
           user={user}
           number={number}
           nickname={nickname}
