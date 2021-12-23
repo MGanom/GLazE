@@ -29,6 +29,7 @@ const Profile = memo(({ database, imageUploader }) => {
   const updateProfile = (info) => {
     setProfile(info);
     database.saveData(history?.location?.state?.id, info);
+    database.updateSign(history?.location?.state?.id, info.name);
   };
 
   const toggleEdit = () => {

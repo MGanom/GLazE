@@ -9,6 +9,12 @@
   font-size: 1.1rem;
   border-bottom: 1px solid rgba(grey, 1);
 
+  .signName,
+  .signNumber,
+  .signTitle,
+  .signDate {
+    padding: 0.3rem;
+  }
   .signNumber {
     width: 10%;
     border-right: 1px solid rgba(grey, 1);

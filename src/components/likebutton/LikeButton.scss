@@ -1,4 +1,5 @@
-.likeBtnContainer {
+.likeBtnContainerOff,
+.likeBtnContainerOn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,8 +7,39 @@
   height: 100%;
   cursor: pointer;
 
-  .likeBtnImgOn,
+  .likeBtnImgOff,
+  .likeBtnImgOn {
+    height: 1.4rem;
+  }
+
   .likeBtnImgOff {
-    height: 50%;
+    filter: invert(57%) sepia(0%) saturate(0%) hue-rotate(185deg)
+      brightness(89%) contrast(87%);
+  }
+  .likeBtnImgOn {
+    filter: invert(14%) sepia(74%) saturate(7478%) hue-rotate(357deg)
+      brightness(89%) contrast(127%);
+  }
+
+  .likeBtnCount {
+    font-size: 1.3rem;
+  }
+}
+
+@media (pointer: fine) {
+  .likeBtnContainerOff:hover {
+    .likeBtnImgOff {
+      filter: invert(14%) sepia(74%) saturate(7478%) hue-rotate(357deg)
+        brightness(89%) contrast(127%);
+    }
+  }
+}
+
+@media (pointer: fine) {
+  .likeBtnContainerOn:hover {
+    .likeBtnImgOn {
+      filter: invert(57%) sepia(0%) saturate(0%) hue-rotate(185deg)
+        brightness(89%) contrast(87%);
+    }
   }
 }

@@ -20,6 +20,7 @@
   background-color: rgba($sub-brown-two, 1);
   border: 3px solid rgba($main-mint, 1);
   box-shadow: $main-shadow;
+
   animation-duration: 0.2s;
   animation-name: zoomin;
   @keyframes zoomin {
@@ -46,6 +47,7 @@
   }
 
   .readInfo {
+    position: relative;
     display: flex;
     align-items: center;
     height: 8%;
@@ -59,6 +61,51 @@
     .readNickname {
       width: 45%;
       font-size: 1rem;
+      cursor: pointer;
+    }
+    .readNickname:hover {
+      color: rgba(0, 0, 0, 0.5);
+      text-shadow: 0 0 0.063rem $main-mint;
+    }
+    .signProfileOn {
+      position: absolute;
+      width: 125%;
+      top: -10rem;
+      left: -12.5%;
+      background-color: rgba($main-brown, 1);
+      border: 0.188rem solid rgba($main-mint, 1);
+      border-radius: 0.625em;
+
+      @media (max-width: 425px) {
+        width: 150%;
+        left: -25%;
+      }
+
+      animation-duration: 1s;
+      animation-name: slidein_Up;
+      @keyframes slidein_Up {
+        from {
+          opacity: (0.3);
+          top: -7rem;
+        }
+      }
+
+      .profileCard {
+        .profileInfo {
+          text-align: left;
+        }
+      }
+
+      .profileCloseBtn {
+        position: absolute;
+        top: 0.3rem;
+        right: 0.5rem;
+        cursor: pointer;
+      }
+      .profileCloseBtn:hover {
+        color: rgba(0, 0, 0, 0.5);
+        text-shadow: 0 0 0.063rem $main-mint;
+      }
     }
     .readDate {
       width: 45%;
