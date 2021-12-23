@@ -1,5 +1,7 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import { useEffect } from "react/cjs/react.development";
 import LikeButton from "../likebutton/LikeButton";
+import Card from "../profile/Card";
 import "./styles/SignRead.scss";
 
 const SignRead = ({
@@ -15,11 +17,21 @@ const SignRead = ({
   toggleSign,
 }) => {
   const idRef = useRef();
+  const [readProfile, setReadProfile] = useState(false);
+  const [profile, setProfile] = useState({});
 
   const deleteSign = (e) => {
     e.preventDefault();
     database.removeSign(idRef.current.innerText, user, toggleSign);
   };
+
+  const toggleProfile = () => {
+    setReadProfile(!readProfile);
+  };
+
+  useEffect(() => {
+    database.signProfile(number, setProfile);
+  }, [database, number]);
 
   return (
     <>
@@ -32,7 +44,20 @@ const SignRead = ({
           <div className="readNumber" ref={idRef}>
             {number}
           </div>
-          <div className="readNickname">{nickname}</div>
+          <div className="readNickname" onClick={toggleProfile}>
+            {nickname}
+          </div>
+          <div className={readProfile ? "signProfileOn" : "signProfileOff"}>
+            {readProfile ? (
+              <>
+                <Card profile={profile} />
+                <div className="profileCloseBtn" onClick={toggleProfile}>
+                  닫기
+                </div>
+              </>
+            ) : null}
+          </div>
+
           <div className="readDate">
             {date}, {time.slice(0, 5)}
           </div>

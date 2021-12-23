@@ -5,7 +5,6 @@ import "./LikeButton.scss";
 const LikeButton = ({ database, state, user, number, nickname }) => {
   const [likeCount, setLikeCount] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
-  const [likeImg, setLikeImg] = useState("/images/heartOff.svg");
 
   const addLikeCount = () => {
     const date = new Date();
@@ -38,13 +37,9 @@ const LikeButton = ({ database, state, user, number, nickname }) => {
       nickname: nickname,
     };
     database.addLikeCount(`guestbook/${number}`, user, clicker);
-    // setIsLiked(true);
-    setLikeImg("/images/heartOn.svg");
   };
   const subLikeCount = () => {
     database.subLikeCount(`guestbook/${number}`, user);
-    // setIsLiked(false);
-    setLikeImg("/images/heartOff.svg");
   };
 
   useEffect(() => {
@@ -57,12 +52,18 @@ const LikeButton = ({ database, state, user, number, nickname }) => {
 
   return (
     <div
-      className="likeBtnContainer"
-      onClick={isLiked ? subLikeCount : addLikeCount}
+      className={isLiked ? "likeBtnContainerOn" : "likeBtnContainerOff"}
+      onClick={
+        state.isGuest
+          ? () => alert("게스트는 사용할 수 없습니다.")
+          : isLiked
+          ? subLikeCount
+          : addLikeCount
+      }
     >
       <img
         className={isLiked ? "likeBtnImgOn" : "likeBtnImgOff"}
-        src={likeImg}
+        src="/images/heartButton.svg"
         alt="likeBtn"
       />
       <div className="likeBtnCount">&nbsp;{likeCount}</div>

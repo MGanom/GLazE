@@ -114,11 +114,32 @@ class Database {
     });
   }
 
+  updateSign(userId, nickname) {
+    const ref = firebaseDatabase.ref(`guestbook`);
+    ref.once("value", (snapshot) => {
+      Object.keys(snapshot.val()).forEach((key) => {
+        if (snapshot.val()[key].signId === userId) {
+          firebaseDatabase.ref(`guestbook/${key}/nickname`).set(nickname);
+        }
+      });
+    });
+  }
+
+  signProfile(number, onUpdate) {
+    const ref = firebaseDatabase.ref(`guestbook/${number}/signId`);
+    ref.on("value", (snapshot) => {
+      this.syncData(snapshot.val(), onUpdate);
+    });
+    return () => ref.off();
+  }
+
   syncLikeCount(usage, onUpdate) {
     const ref = firebaseDatabase.ref(`${usage}/likelist`);
     ref.on("value", (snapshot) => {
       snapshot.val() && onUpdate(Object.keys(snapshot.val()).length);
+      !snapshot.val() && onUpdate(0);
     });
+    return () => ref.off();
   }
 
   addLikeCount(usage, userId, data) {
@@ -138,6 +159,7 @@ class Database {
         onCheck(false);
       }
     });
+    return () => ref.off();
   }
 }
 

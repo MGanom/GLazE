@@ -45,7 +45,34 @@ const Modal = ({ database, usage, description }) => {
 
   const sendReport = (e) => {
     e.preventDefault();
+    const date = new Date();
+    let hours;
+    let minutes;
+    let seconds;
+    if (date.getHours() < 10) {
+      hours = "0" + date.getHours();
+    } else {
+      hours = date.getHours();
+    }
+    if (date.getMinutes() < 10) {
+      minutes = "0" + date.getMinutes();
+    } else {
+      minutes = date.getMinutes();
+    }
+    if (date.getSeconds() < 10) {
+      seconds = "0" + date.getSeconds();
+    } else {
+      seconds = date.getSeconds();
+    }
+
     const report = {
+      date:
+        String(date.getFullYear()).slice(2) +
+        "." +
+        (date.getMonth() + 1) +
+        "." +
+        date.getDate(),
+      time: hours + ":" + minutes + ":" + seconds,
       id: reportId,
       reporterId: history?.location?.state?.id,
       nickname: nickname,
