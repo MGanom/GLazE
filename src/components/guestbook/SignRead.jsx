@@ -43,7 +43,11 @@ const SignRead = ({
           <div className="readNumber" ref={idRef}>
             {number}
           </div>
-          <div className="readNickname" onClick={toggleProfile}>
+          <div
+            className="readNickname"
+            onClick={toggleProfile}
+            title={`${nickname}의 프로필 카드 보기`}
+          >
             {nickname}
           </div>
           <div className={readProfile ? "signProfileOn" : "signProfileOff"}>

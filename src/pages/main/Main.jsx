@@ -135,7 +135,7 @@ const Main = ({ database }) => {
               icon={faStar}
             />
             로 표시됩니다. <br />
-            3.등록된 즐겨찾기는{" "}
+            3. 등록된 즐겨찾기는{" "}
             <FontAwesomeIcon
               color="rgb(255, 215, 0)"
               filter="drop-shadow(0 0 0.063rem rgb(100, 100, 100)"

@@ -19,13 +19,16 @@ const Card = ({ profile }) => {
         }
         src={url}
         alt="profileImg"
+        title="사진 보기"
         onClick={history?.location?.state?.isGuest === true ? null : openImg}
       />
       <div className="profileInfo">
         <h1 className="profileName">{name}</h1>
         <p className="profileGender">{gender}</p>
         <p className="profileEmail">{email}</p>
-        <p className="profileMessage">{message}</p>
+        <p className="profileMessage" title={message}>
+          {message}
+        </p>
       </div>
     </div>
   );
