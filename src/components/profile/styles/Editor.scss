@@ -1,3 +1,5 @@
+@import "../../../styles/Colors.scss";
+
 .profileEditor {
   width: 100%;
   margin-left: 0.5em;
@@ -12,6 +14,8 @@
     .row1,
     .row2,
     .row3 {
+      display: flex;
+      align-items: center;
       width: 100%;
       input,
       select,
@@ -25,6 +29,7 @@
       }
     }
     .row1 {
+      height: 23%;
       .name {
         width: 15%;
       }
@@ -39,16 +44,41 @@
       }
     }
     .row2 {
-      height: 100%;
+      height: 37%;
       .selfIntro {
         width: 100%;
         height: 100%;
         resize: none;
       }
     }
-    button {
-      font-size: 0.9rem;
-      width: fit-content;
+    .row3 {
+      height: 20%;
+      #imageUpload {
+        display: none;
+      }
+      .imageUploadBtn {
+        cursor: pointer;
+      }
+      .imageUploadBtn:hover {
+        color: rgba(0, 0, 0, 0.5);
+        text-shadow: 0 0 0.063rem $main-mint;
+      }
+    }
+    .profileUpdating,
+    .profileUpdated {
+      display: flex;
+      align-items: center;
+      height: 20%;
+    }
+    .profileUpdating {
+      color: grey;
+    }
+    .profileUpdated {
+      cursor: pointer;
+    }
+    .profileUpdated:hover {
+      color: rgba(0, 0, 0, 0.5);
+      text-shadow: 0 0 0.063rem $main-mint;
     }
   }
 }

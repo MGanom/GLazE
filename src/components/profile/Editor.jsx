@@ -15,23 +15,34 @@ const Editor = ({
   const genderRef = useRef();
   const emailRef = useRef();
   const messageRef = useRef();
+  const labelRef = useRef();
   const [image, setImage] = useState(null);
   const [isUploading, setIsUploading] = useState(false);
 
   const onImageUpload = async (e) => {
     setIsUploading(true);
-    const uploaded = await imageUploader.upload(e.target.files[0]);
+    if (e.target.files[0] && e.target.files[0].type.indexOf("image") === 0) {
+      const uploaded = await imageUploader.upload(e.target.files[0]);
+      labelRef.current.innerText = e.target.files[0].name;
+      setImage(uploaded.url);
+    } else if (
+      e.target.files[0] &&
+      e.target.files[0].type.indexOf("image") !== 0
+    ) {
+      alert("jpg, jpeg, png, 혹은 bmp 파일만 선택할 수 있습니다.");
+      labelRef.current.innerText =
+        "잘못된 형식의 파일입니다. 다시 선택해주세요.";
+    }
     setIsUploading(false);
-    setImage(uploaded.url);
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
     const info = {
-      name: nameRef.current.value || name || "",
-      gender: genderRef.current.value || gender || "",
-      email: emailRef.current.value || email || "",
-      message: messageRef.current.value || message || "",
+      name: nameRef.current.value || name || "이름",
+      gender: genderRef.current.value || gender || "성별",
+      email: emailRef.current.value || email || "Email",
+      message: messageRef.current.value || message || "메시지",
       imageURL: image || imageURL || "",
     };
     updateProfile(info);
@@ -74,21 +85,26 @@ const Editor = ({
         </div>
         <div className="row3">
           <input
-            className="imageUploadBtn"
+            id="imageUpload"
             type="file"
-            accept="image/*"
+            accept=".jpg,.jpeg,.png,.bmp"
             name="file"
             onChange={onImageUpload}
           />
+          <label
+            htmlFor="imageUpload"
+            className="imageUploadBtn"
+            ref={labelRef}
+          >
+            프로필 사진 선택
+          </label>
         </div>
         {isUploading ? (
-          <button className="profileUpdating" onClick={onSubmit} disabled>
-            완료
-          </button>
+          <div className="profileUpdating">처리 중..</div>
         ) : (
-          <button className="profileUpdated" onClick={onSubmit}>
+          <div className="profileUpdated" onClick={onSubmit}>
             완료
-          </button>
+          </div>
         )}
       </form>
     </section>
