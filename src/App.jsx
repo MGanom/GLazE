@@ -22,7 +22,7 @@ function App({ youtube, auth, database, imageUploader }) {
         <Router>
           <Switch>
             <Route exact path="/">
-              <Login auth={auth} />
+              <Login auth={auth} database={database} />
             </Route>
             <>
               <Header

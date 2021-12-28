@@ -6,6 +6,7 @@ import "./styles/Profile.scss";
 
 const Profile = memo(({ database, imageUploader }) => {
   const history = useHistory();
+  const userId = history?.location?.state?.id;
   const [profile, setProfile] = useState({});
   const [isEdit, setIsEdit] = useState(false);
 
@@ -16,20 +17,30 @@ const Profile = memo(({ database, imageUploader }) => {
       });
       return () => guestSync();
     }
-    const stopSync = database.syncData(history?.location?.state?.id, (info) => {
+    const stopSync = database.syncData(userId, (info) => {
       setProfile(info);
     });
     return () => stopSync();
-  }, [
-    database,
-    history?.location?.state?.isGuest,
-    history?.location?.state?.id,
-  ]);
+  }, [database, history?.location?.state?.isGuest, userId]);
 
   const updateProfile = (info) => {
     setProfile(info);
-    database.saveData(history?.location?.state?.id, info);
-    database.updateSign(history?.location?.state?.id, info.name);
+    database.saveData(userId, info);
+    database.updateSign(userId, info.name);
+  };
+
+  const resetProfile = (e) => {
+    e.preventDefault();
+    if (window.confirm("프로필을 초기화합니다.")) {
+      const info = {
+        name: `사용자(${userId.slice(0, 5)})`,
+        gender: "　",
+        email: "　",
+        message: "프로필을 설정해주세요.",
+      };
+      database.saveData(userId, info);
+      database.updateSign(userId, info.name);
+    }
   };
 
   const toggleEdit = () => {
@@ -51,6 +62,7 @@ const Profile = memo(({ database, imageUploader }) => {
           <Editor
             profile={profile}
             updateProfile={updateProfile}
+            resetProfile={resetProfile}
             imageUploader={imageUploader}
             isEdit={isEdit}
             setIsEdit={setIsEdit}

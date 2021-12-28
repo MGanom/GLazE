@@ -64,21 +64,37 @@
         text-shadow: 0 0 0.063rem $main-mint;
       }
     }
-    .profileUpdating,
-    .profileUpdated {
+    .row4 {
       display: flex;
       align-items: center;
       height: 20%;
-    }
-    .profileUpdating {
-      color: grey;
-    }
-    .profileUpdated {
-      cursor: pointer;
-    }
-    .profileUpdated:hover {
-      color: rgba(0, 0, 0, 0.5);
-      text-shadow: 0 0 0.063rem $main-mint;
+
+      .resetBtnOff,
+      .resetBtn,
+      .profileUpdating,
+      .profileUpdated {
+        border: 0.126rem solid black;
+        padding: 0.063rem;
+      }
+
+      .profileUpdating,
+      .resetBtnOff {
+        color: grey;
+      }
+      .profileUpdated,
+      .resetBtn {
+        cursor: pointer;
+      }
+      .profileUpdated:hover,
+      .resetBtn:hover {
+        color: rgba(0, 0, 0, 0.5);
+        text-shadow: 0 0 0.063rem $main-mint;
+      }
+
+      .resetBtnOff,
+      .resetBtn {
+        margin-left: 1rem;
+      }
     }
   }
 }

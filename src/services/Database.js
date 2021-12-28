@@ -1,8 +1,21 @@
 import { firebaseDatabase } from "./Firebase";
 
 class Database {
+  createData(userId) {
+    const ref = firebaseDatabase.ref(`users/${userId}/info`);
+    ref.once("value", (snapshot) => {
+      !snapshot.val() &&
+        this.saveData(userId, {
+          name: `사용자(${userId.slice(0, 5)})`,
+          gender: "　",
+          email: "　",
+          message: "프로필을 설정해주세요.",
+        });
+    });
+  }
+
   syncData(userId, onUpdate) {
-    const ref = firebaseDatabase.ref(`${userId}/info`);
+    const ref = firebaseDatabase.ref(`users/${userId}/info`);
     ref.on("value", (snapshot) => {
       snapshot.val() && onUpdate(snapshot.val());
     });
@@ -10,12 +23,12 @@ class Database {
   }
 
   saveData(userId, data) {
-    firebaseDatabase.ref(`${userId}/info`).set(data);
+    firebaseDatabase.ref(`users/${userId}/info`).set(data);
   }
   //
   //
   bookmarkId(userId) {
-    const ref = firebaseDatabase.ref(`${userId}/bookmark`);
+    const ref = firebaseDatabase.ref(`users/${userId}/bookmark`);
     let id = 0;
     ref.on("value", (snapshot) => {
       if (snapshot.val()) {
@@ -28,7 +41,7 @@ class Database {
   }
 
   syncBookmark(userId, onUpdate) {
-    const ref = firebaseDatabase.ref(`${userId}/bookmark`);
+    const ref = firebaseDatabase.ref(`users/${userId}/bookmark`);
     ref.on("value", (snapshot) => {
       snapshot.val() && onUpdate(snapshot.val());
       !snapshot.val() && onUpdate({});
@@ -37,7 +50,7 @@ class Database {
   }
 
   checkBookmark(userId, id, onCheck) {
-    const ref = firebaseDatabase.ref(`${userId}/bookmark/${id}`);
+    const ref = firebaseDatabase.ref(`users/${userId}/bookmark/${id}`);
     ref.once("value", (snapshot) => {
       if (snapshot.val()) {
         onCheck(true);
@@ -48,15 +61,15 @@ class Database {
   }
 
   saveBookmark(userId, data) {
-    firebaseDatabase.ref(`${userId}/bookmark/${data.id}`).set(data);
+    firebaseDatabase.ref(`users/${userId}/bookmark/${data.id}`).set(data);
   }
 
   removeBookmark(userId, id) {
-    firebaseDatabase.ref(`${userId}/bookmark/${id}`).remove();
+    firebaseDatabase.ref(`users/${userId}/bookmark/${id}`).remove();
   }
 
   getNickname(userId, setNick) {
-    const ref = firebaseDatabase.ref(`${userId}`);
+    const ref = firebaseDatabase.ref(`users/${userId}`);
     ref.on("value", (snapshot) => {
       if (snapshot.val()) {
         setNick(snapshot.val().info.name);
