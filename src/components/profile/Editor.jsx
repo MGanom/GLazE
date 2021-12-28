@@ -4,12 +4,12 @@ import "./styles/Editor.scss";
 const Editor = ({
   profile,
   updateProfile,
+  resetProfile,
   isEdit,
   setIsEdit,
   imageUploader,
 }) => {
   const { name, gender, email, message, imageURL } = profile;
-
   const formRef = useRef();
   const nameRef = useRef();
   const genderRef = useRef();
@@ -40,8 +40,8 @@ const Editor = ({
     e.preventDefault();
     const info = {
       name: nameRef.current.value || name || "이름",
-      gender: genderRef.current.value || gender || "성별",
-      email: emailRef.current.value || email || "Email",
+      gender: genderRef.current.value || gender || "　",
+      email: emailRef.current.value || email || "　",
       message: messageRef.current.value || message || "메시지",
       imageURL: image || imageURL || "",
     };
@@ -99,13 +99,23 @@ const Editor = ({
             프로필 사진 선택
           </label>
         </div>
-        {isUploading ? (
-          <div className="profileUpdating">처리 중..</div>
-        ) : (
-          <div className="profileUpdated" onClick={onSubmit}>
-            완료
-          </div>
-        )}
+        <div className="row4">
+          {isUploading ? (
+            <>
+              <div className="profileUpdating">처리 중..</div>
+              <div className="resetBtnOff">초기화</div>
+            </>
+          ) : (
+            <>
+              <div className="profileUpdated" onClick={onSubmit}>
+                완료
+              </div>
+              <div className="resetBtn" onClick={resetProfile}>
+                초기화
+              </div>
+            </>
+          )}
+        </div>
       </form>
     </section>
   );

@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Login.scss";
 
-const Login = ({ auth }) => {
+const Login = ({ auth, database }) => {
   const history = useHistory();
   const moreInfoRef = useRef();
   const [whileLogin, setWhileLogin] = useState(false);
@@ -21,7 +21,10 @@ const Login = ({ auth }) => {
     auth
       .login(e.target.alt) //
       .then(setWhileLogin(true))
-      .then((data) => goToMain(data.user.uid))
+      .then((data) => {
+        database.createData(data.user.uid);
+        goToMain(data.user.uid);
+      })
       .catch(() => {
         alert("로그인에 실패했습니다. 다시 시도해주세요.");
         setWhileLogin(false);
