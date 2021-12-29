@@ -23,7 +23,7 @@ const Login = ({ auth, database }) => {
       .then(setWhileLogin(true))
       .then((data) => {
         database.createData(data.user.uid);
-        goToMain(data.user.uid);
+        goToMain(data.user.uid, data.user.isAnonymous);
       })
       .catch(() => {
         alert("로그인에 실패했습니다. 다시 시도해주세요.");
