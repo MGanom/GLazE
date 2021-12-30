@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./styles/SignForm.scss";
 
-const SignForm = ({ database, user, toggleWrite }) => {
+const SignForm = ({ database, user, toggleWrite, bookClose }) => {
   const contentRef = useRef();
   const titleRef = useRef();
   const [nickname, setNickname] = useState("");
@@ -60,6 +60,20 @@ const SignForm = ({ database, user, toggleWrite }) => {
       toggleWrite();
     }
   };
+
+  useEffect(() => {
+    const close = (e) => {
+      if (e.code === "Escape") {
+        toggleWrite();
+      }
+    };
+    window.removeEventListener("keydown", bookClose);
+    window.addEventListener("keydown", close);
+    return () => {
+      window.removeEventListener("keydown", close);
+      window.addEventListener("keydown", bookClose);
+    };
+  }, [bookClose, toggleWrite]);
 
   useEffect(() => {
     database.getNickname(user, setNickname);

@@ -14,6 +14,7 @@ const SignRead = ({
   date,
   time,
   toggleSign,
+  bookClose,
 }) => {
   const idRef = useRef();
   const [readProfile, setReadProfile] = useState(false);
@@ -31,6 +32,20 @@ const SignRead = ({
   useEffect(() => {
     database.signProfile(number, setProfile);
   }, [database, number]);
+
+  useEffect(() => {
+    const close = (e) => {
+      if (e.code === "Escape") {
+        toggleSign();
+      }
+    };
+    window.removeEventListener("keydown", bookClose);
+    window.addEventListener("keydown", close);
+    return () => {
+      window.removeEventListener("keydown", close);
+      window.addEventListener("keydown", bookClose);
+    };
+  }, [bookClose, toggleSign]);
 
   return (
     <>
