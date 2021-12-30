@@ -369,4 +369,11 @@ map을 통해 각 페이지에 연결, 구현
 * 프로필 초기화 기능 추가
 </details>
   
+<details>
+<summary>211229~211230</summary>
+  
+* ESC 키로 방명록과 건의사항 및 버그 제보 창 닫는 기능 구현
+* 버그 수정
+
+</details>
 </details>
