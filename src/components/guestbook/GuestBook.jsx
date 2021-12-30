@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useHistory } from "react-router-dom";
 import SignForm from "./SignForm";
 import SignList from "./SignList";
@@ -9,7 +9,13 @@ const GuestBook = ({ database }) => {
   const state = history?.location?.state;
   const [signData, setSignData] = useState({});
   const [onWrite, setOnWrite] = useState(false);
-  const [isOpen, setIsOpen] = useState();
+  const [isOpen, setIsOpen] = useState(false);
+  const bookClose = useCallback((e) => {
+    if (setIsOpen && e.code === "Escape") {
+      document.querySelector("body").classList.remove("noScroll");
+      setIsOpen(false);
+    }
+  }, []);
 
   const openGuestBook = () => {
     setIsOpen(true);
@@ -22,6 +28,13 @@ const GuestBook = ({ database }) => {
       setIsOpen(false);
     }
   };
+
+  useEffect(() => {
+    window.addEventListener("keydown", bookClose);
+    return () => {
+      window.removeEventListener("keydown", bookClose);
+    };
+  }, [bookClose]);
 
   useEffect(() => {
     database.syncGuestBook(setSignData);
@@ -58,6 +71,7 @@ const GuestBook = ({ database }) => {
                     content={signData[key].content}
                     date={signData[key].date}
                     time={signData[key].time}
+                    bookClose={bookClose}
                   />
                 );
               })}
@@ -76,6 +90,7 @@ const GuestBook = ({ database }) => {
                     database={database}
                     user={state.id}
                     toggleWrite={toggleWrite}
+                    bookClose={bookClose}
                   />
                 </div>
               </>

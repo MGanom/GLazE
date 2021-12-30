@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import SignRead from "./SignRead";
 import "./styles/SignList.scss";
 
@@ -12,12 +12,13 @@ const SignList = ({
   content,
   date,
   time,
+  bookClose,
 }) => {
   const [onRead, setOnRead] = useState(false);
 
-  const toggleSign = (e) => {
+  const toggleSign = useCallback(() => {
     setOnRead(!onRead);
-  };
+  }, [onRead]);
 
   return (
     <div className="guestBookList">
@@ -39,6 +40,7 @@ const SignList = ({
           date={date}
           time={time}
           toggleSign={toggleSign}
+          bookClose={bookClose}
         />
       ) : null}
     </div>

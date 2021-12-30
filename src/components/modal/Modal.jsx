@@ -36,6 +36,18 @@ const Modal = ({ database, usage, description }) => {
   };
 
   useEffect(() => {
+    const close = (e) => {
+      if (isOpen && e.code === "Escape") {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener("keydown", close);
+    return () => {
+      window.removeEventListener("keydown", close);
+    };
+  });
+
+  useEffect(() => {
     database.getNickname(history?.location?.state?.id, setNickname);
   }, [database, history?.location?.state?.id, setNickname]);
 
@@ -88,7 +100,7 @@ const Modal = ({ database, usage, description }) => {
       </div>
       {isOpen ? (
         <>
-          <div className="modalBackground" onClick={closeModal}></div>
+          <div className="modalBackground"></div>
           <div className="modalContainer">
             <div className="modalCloseBtn" onClick={closeModal}>
               닫기
