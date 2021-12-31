@@ -376,4 +376,13 @@ map을 통해 각 페이지에 연결, 구현
 * 버그 수정
 
 </details>
+   
+<details>
+<summary>211231</summary>
+  
+* 쪽지함 기능 구현을 위한 컴포넌트 추가
+* 쪽지함 기능 
+
+</details>
+
 </details>
