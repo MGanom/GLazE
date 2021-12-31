@@ -1,0 +1,21 @@
+@import "../../../styles/Colors.scss";
+
+.letterBox {
+  position: absolute;
+  bottom: -2rem;
+  left: 6.4rem;
+
+  .letterBoxSwitch {
+    padding: 0.5rem;
+    background-color: rgba($main-brown, 0.95);
+    border: 0.188rem solid rgba($main-mint, 1);
+    box-shadow: $main-shadow-two;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+  .letterBoxSwitch:hover {
+    color: rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 0.063rem $main-mint;
+    transform: scale(1.05);
+  }
+}

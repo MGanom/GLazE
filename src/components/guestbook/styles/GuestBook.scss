@@ -2,21 +2,16 @@
 
 .guestBook {
   position: absolute;
-  bottom: -20%;
-  left: 2%;
-  // width: fit-content;
-  padding: 0.5rem;
-
-  background-color: rgba($main-brown, 0.95);
-  border: 0.188rem solid rgba($main-mint, 1);
-  box-shadow: $main-shadow;
+  bottom: -2rem;
+  left: 0.4rem;
 
   .guestBookSwitch {
-    font-size: 1.6rem;
+    background-color: rgba($main-brown, 0.95);
+    border: 0.188rem solid rgba($main-mint, 1);
+    box-shadow: $main-shadow-two;
+    padding: 0.5rem;
+    font-size: 1.4rem;
     cursor: pointer;
-    @media (max-width: 425px) {
-      font-size: 1.3rem;
-    }
   }
   .guestBookSwitch:hover {
     color: rgba(0, 0, 0, 0.5);
