@@ -29,6 +29,10 @@ const GuestBook = ({ database }) => {
     }
   };
 
+  const toggleWrite = () => {
+    setOnWrite(!onWrite);
+  };
+
   useEffect(() => {
     window.addEventListener("keydown", bookClose);
     return () => {
@@ -39,10 +43,6 @@ const GuestBook = ({ database }) => {
   useEffect(() => {
     database.syncGuestBook(setSignData);
   }, [database]);
-
-  const toggleWrite = () => {
-    setOnWrite(!onWrite);
-  };
 
   return (
     <div className="guestBook">

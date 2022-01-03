@@ -29,13 +29,14 @@ const Profile = memo(({ database, imageUploader }) => {
     database.updateSign(userId, info.name);
   };
 
+  console.log(userId);
   const resetProfile = (e) => {
     e.preventDefault();
     if (window.confirm("프로필을 초기화합니다.")) {
       const info = {
-        name: `사용자(${userId.slice(0, 5)})`,
-        gender: "　",
-        email: "　",
+        name: `사용자(${userId.slice(0, 6)})`,
+        gender: "성별",
+        email: "이메일",
         message: "프로필을 설정해주세요.",
       };
       database.saveData(userId, info);
@@ -60,6 +61,7 @@ const Profile = memo(({ database, imageUploader }) => {
       <div className="profileEditorContainer">
         {!isEdit ? null : (
           <Editor
+            userId={userId}
             profile={profile}
             updateProfile={updateProfile}
             resetProfile={resetProfile}

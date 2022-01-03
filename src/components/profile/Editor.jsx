@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import "./styles/Editor.scss";
 
 const Editor = ({
+  userId,
   profile,
   updateProfile,
   resetProfile,
@@ -39,9 +40,11 @@ const Editor = ({
   const onSubmit = (e) => {
     e.preventDefault();
     const info = {
-      name: nameRef.current.value || name || "이름",
-      gender: genderRef.current.value || gender || "　",
-      email: emailRef.current.value || email || "　",
+      name: nameRef.current.value
+        ? nameRef.current.value + "(" + userId.slice(0, 6) + ")"
+        : null || name || "이름",
+      gender: genderRef.current.value || gender || "성별",
+      email: emailRef.current.value || email || "이메일",
       message: messageRef.current.value || message || "메시지",
       imageURL: image || imageURL || "",
     };

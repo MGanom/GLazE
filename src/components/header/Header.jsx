@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import GuestBook from "../guestbook/GuestBook";
-import LetterBox from "../letterbox/LetterBox";
 import Profile from "../profile/Profile";
 import "./Header.scss";
 
@@ -44,7 +43,6 @@ const Header = ({ auth, database, imageUploader }) => {
   return (
     <header className="header">
       <div id="main" className="title">
-        <LetterBox database={database} />
         <GuestBook database={database} />
         <img
           src="/images/glazeTitle.png"
