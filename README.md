@@ -246,7 +246,7 @@ map을 통해 각 페이지에 연결, 구현
 <br />
 
 <details>
-<summary>기능 추가 및 추가 디자인(211203 ~)</summary>
+<summary>2차 기능 추가 및 추가 디자인(211203 ~ 220103)</summary>
 <br/>
 <details>
 <summary>211203</summary>
