@@ -7,14 +7,14 @@ const Footer = ({ database }) => {
       <a
         target="_blank"
         rel="noopener noreferrer"
-        href="https://github.com/MGanom"
+        href="https://github.com/Moon-Ga"
         className="myGithub"
       >
-        MGanom's Github
+        Moon-Ga's GitHub
       </a>
       <div className="copyrightAndReport">
         <div className="copyright">
-          &copy; Copyright 2021, MGanom. All Rights Reserved
+          &copy; 2021. Moon-Ga all rights reserved.
         </div>
         <div className="report">
           <Modal
